@@ -127,3 +127,18 @@ const Button = (props) => {
 
 
 # React Hooks
+###### **useState**
+```jsx
+const App = () => {
+	//useState(0)
+	//0 is the initial value of count
+	const [count, setCount] = React.useState(0);
+	
+	function handleClick(){
+		setCount(count + 1);
+	}
+
+	return <button onClick={handleClick}>my button</button>;
+};
+```
+
