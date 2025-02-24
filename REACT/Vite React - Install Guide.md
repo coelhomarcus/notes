@@ -99,4 +99,4 @@ module.exports = {
 
 
 # My React knowledge
-# [[React ⚛️]]
+# [[React knowledge]]
