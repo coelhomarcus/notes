@@ -96,7 +96,3 @@ module.exports = {
   },
 };
 ```
-
-
-# My React knowledge
-# [[React knowledge]]
