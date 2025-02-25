@@ -168,3 +168,20 @@ const App = () => {
 	return <div>hello</div>;
 };
 ```
+
+```jsx
+const App = () => {
+	React.useEffect(() => {
+    function handleScroll(event) {
+      console.log(event);
+    }
+    window.addEventListener('scroll', handleScroll);
+    // Clear when the event is removed
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+	
+	return <p style={{ height: '200vh' }}>Giant Page for Scroll xD</p>;
+};
+```
