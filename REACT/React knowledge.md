@@ -185,3 +185,32 @@ const App = () => {
 	return <p style={{ height: '200vh' }}>Giant Page for Scroll xD</p>;
 };
 ```
+###### **useRef** 
+```jsx
+const App = () => {
+	//used to reference an element
+	const button = React.useRef();
+
+	console.log(button.current);
+	//<button ref={button}>my button</button>
+
+	return <button ref={button}>my button</button>;
+};
+```
+
+```jsx
+const timeoutRef = React.useRef();
+
+//also used to save a variable that does not reset on every render
+
+function handleClick() {
+    setNotification('Thanks for buy');
+    
+    clearTimeout(timeoutRef.current);
+    
+    timeoutRef.current = setTimeout(() => {
+      setNotification(null);
+    }, 1000);
+}
+```
+
