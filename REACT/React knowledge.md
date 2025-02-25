@@ -127,7 +127,7 @@ const Button = (props) => {
 
 
 # React Hooks
-###### **useState**
+### **useState**
 ```jsx
 const App = () => {
 	//useState(0)
@@ -142,7 +142,7 @@ const App = () => {
 };
 ```
 
-###### **useEffect**
+### **useEffect**
 ```jsx
 const App = () => {
 	const [count, setCount] = React.useState(0);
@@ -185,7 +185,7 @@ const App = () => {
 	return <p style={{ height: '200vh' }}>Giant Page for Scroll xD</p>;
 };
 ```
-###### **useRef** 
+### **useRef** 
 ```jsx
 const App = () => {
 	//used to reference an element
@@ -214,7 +214,7 @@ function handleClick() {
 }
 ```
 
-###### **useContext**
+### **useContext**
 useContext will be used to send variables, functions, and other data to child components.
 In this example, the variable data (useState) is sent from GlobalContext to the child (Product).
 ```jsx
@@ -264,7 +264,7 @@ const Product = () => {
   
 export default Product;
 ```
-###### **Other React Rooks**
+##### **Other React Rooks**
 `They are not usually used`
 - **useMemo**
 - **useCallback**
