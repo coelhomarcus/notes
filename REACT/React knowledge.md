@@ -142,3 +142,29 @@ const App = () => {
 };
 ```
 
+###### **useEffect**
+```jsx
+const App = () => {
+	const [count, setCount] = React.useState(0);
+	
+	React.useEffect(()=>{
+		console.log("count changed");
+	}, [count]);
+	
+	function handleClick(){
+		setCount(count + 1);
+	}
+
+	return <button onClick={handleClick}>my button</button>;
+};
+```
+
+```jsx
+const App = () => {
+	React.useEffect(()=>{
+		console.log("Runs once");
+	}, []);
+	
+	return <div>hello</div>;
+};
+```
