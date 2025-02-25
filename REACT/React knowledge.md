@@ -214,3 +214,57 @@ function handleClick() {
 }
 ```
 
+###### **useContext**
+useContext will be used to send variables, functions, and other data to child components.
+In this example, the variable data (useState) is sent from GlobalContext to the child (Product).
+```jsx
+//App.jsx
+import React from 'react';
+import Product from './Product';
+import { GlobalStorage } from './GlobalContext';
+
+const App = () => {
+	return (
+	    <GlobalStorage>
+	      <Product />
+	    </GlobalStorage>
+	  );
+};
+
+export default App;
+```
+```jsx
+//GlobalStorage.jsx
+import React from 'react';
+
+export const GlobalContext = React.createContext();
+
+export const GlobalStorage = ({ children }) => {
+
+    const [data, setData] = React.useState(null);
+
+    return (
+        <GlobalContext.Provider value={{ data }}>
+            {children}
+        </GlobalContext.Provider>
+    );
+
+};
+```
+```jsx
+//Product.jsx
+import React from 'react'
+import { GlobalContext } from './GlobalContext'
+
+const Product = () => {
+    const global = React.useContext(GlobalContext);
+    return <div>{global.data}</div>;
+}
+
+  
+export default Product;
+```
+###### **Other React Rooks**
+`They are not usually used`
+- **useMemo**
+- **useCallback**
