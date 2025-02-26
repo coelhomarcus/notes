@@ -127,6 +127,8 @@ const Button = (props) => {
 
 
 # React Hooks
+Don't use hooks inside functions, loops, or conditionals.
+Hooks should only be used inside functions in custom hooks.
 ### **useState**
 ```jsx
 const App = () => {
@@ -264,7 +266,62 @@ const Product = () => {
   
 export default Product;
 ```
-##### **Other React Rooks**
-`They are not usually used`
+
+### **Custom Hooks**
+A custom hook always starts with 'use'. Example: `useCustomHook.jsx`.
+```jsx
+import React from 'react';
+
+const useFetch = () => {
+  const [data, setData] = React.useState(null);
+  const [error, setError] = React.useState(null);
+  const [loading, setLoading] = React.useState(null);
+
+  const request = React.useCallback(async (url, options) => {
+    let response;
+    let json;
+    try {
+      setError(null);
+      setLoading(true);
+      response = await fetch(url, options);
+      json = await response.json();
+      if (response.ok === false) throw new Error(json.message);
+    } catch (err) {
+      json = null;
+      setError(err.message);
+    } finally {
+      setData(json);
+      setLoading(false);
+      return { response, json };
+    }
+  }, []);
+
+  return { data, loading, error, request };
+};
+
+export default useFetch;
+```
+```jsx
+//App.jsx
+import React from 'react';
+import useFetch from './useFetch';
+
+const App = () => {
+  const { data, loading, error, request } = useFetch();
+
+  React.useEffect(() => {
+    request('https://ranekapi.origamid.dev/json/api/produto/notebook');
+  }, [request]);
+
+  if (error) return <p>{error}</p>;
+  if (loading) return <p>Carregando...</p>;
+  if (data) return <div>{data.nome}</div>;
+  else return null;
+};
+
+export default App;
+```
+
+### **Other React Rooks**
 - **useMemo**
-- **useCallback**
+- **useCallback (important for Custom Hooks)**
