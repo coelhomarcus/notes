@@ -8,7 +8,7 @@
   "workbench.tree.enableStickyScroll": false,
   "workbench.tree.indent": 24,
   "workbench.colorTheme": "Min Dark",
-  "workbench.productIconTheme": "fluent-icons",
+  "workbench.iconTheme": "symbols",
   "explorer.confirmDelete": false,
   "explorer.compactFolders": false,
   "explorer.confirmPasteNative": false,
