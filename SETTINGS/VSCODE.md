@@ -21,7 +21,7 @@
   "breadcrumbs.enabled": false,
   "terminal.integrated.env.windows": {},
   "terminal.integrated.defaultProfile.windows": "Command Prompt",
-  "editor.fontFamily": "Dank Mono, monospace",
+  "editor.fontFamily": "FiraCode Nerd Font, monospace",
   "editor.fontSize": 16,
   "editor.lineHeight": 2,
   "editor.fontLigatures": true,
