@@ -1,5 +1,10 @@
+### my vscode settings
 
-### `settings.json`
+- Theme: `Vesper` 
+- Icons: `Symbols` 
+- Font: `FiraCode Nerd Font` 
+
+#### `settings.json`
 
 ```json
 {
@@ -7,7 +12,7 @@
   "workbench.startupEditor": "none",
   "workbench.tree.enableStickyScroll": false,
   "workbench.tree.indent": 24,
-  "workbench.colorTheme": "Min Dark",
+  "workbench.colorTheme": "Vesper",
   "workbench.iconTheme": "symbols",
   "explorer.confirmDelete": false,
   "explorer.compactFolders": false,
@@ -18,7 +23,6 @@
   "window.restoreWindows": "none",
   "window.confirmSaveUntitledWorkspace": false,
   "window.titleBarStyle": "custom",
-  "breadcrumbs.enabled": false,
   "terminal.integrated.env.windows": {},
   "terminal.integrated.defaultProfile.windows": "Command Prompt",
   "editor.fontFamily": "FiraCode Nerd Font, monospace",
@@ -28,8 +32,13 @@
   "editor.renderLineHighlight": "none",
   "editor.minimap.enabled": false,
   "editor.formatOnSave": true,
-  "editor.cursorBlinking": "phase",
+  "editor.cursorBlinking": "smooth",
   "editor.cursorSmoothCaretAnimation": "explicit",
   "editor.wordWrap": "on",
+  "breadcrumbs.enabled": false,
+  "workbench.sideBar.location": "right",
+  "workbench.activityBar.location": "top",
+  "window.menuBarVisibility": "compact",
+  "window.commandCenter": false,
 }
 ```
