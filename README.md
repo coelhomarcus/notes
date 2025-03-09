@@ -9,6 +9,7 @@
 
 ### TYPESCRIPT
 ##### [🚀 TypeScript - Quick Tips](./reference/languages/typescript/QuickTips.md)
+##### [🚀 TypeScript - Interface](./reference/languages/typescript/InterfaceExamples.md)
 
 ### SETTINGS ⚙
 ##### [💻 VS Code](./dotfiles/vscode.md)
