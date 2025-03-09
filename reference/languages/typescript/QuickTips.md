@@ -66,3 +66,39 @@ const button = document.querySelector('button');
 //Only execute when button is different from null.
 button?.click();
 ```
+
+### Type
+```ts
+function example(data: {
+   name: string,
+   year: number
+ }) {
+   console.log(data.name);
+   console.log(data.year);
+ }
+```
+```ts
+//using type
+type Data = {
+   name: string;
+   year: number;
+}
+
+function example(data: Data) {
+   console.log(data.name);
+   console.log(data.year);
+}
+```
+```ts
+//another example
+type numberOrString = number | string;
+```
+
+### Interface
+```ts
+//most used for objects
+interface Data {
+   name: string;
+   year: number;
+}
+```
