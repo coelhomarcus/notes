@@ -1,4 +1,4 @@
-# Quick Tips 🚀
+# Quick Revision
 ### Install
 ```bash
 npm install -g typescript
@@ -95,6 +95,9 @@ type numberOrString = number | string;
 ```
 
 ### Interface
+
+##### [❇️ interface - more examples](./InterfaceExamples.md)
+
 ```ts
 //most used for objects
 interface Data {
@@ -123,3 +126,42 @@ function onlyNumber(data: (string | number)[]) {
 
 onlyNumber(arr);
 ```
+
+```ts
+interface Curso {
+  nome: string;
+  horas: number;
+  aulas: string;
+  gratuito: boolean;
+  tags: string[];
+  idAulas: number[];
+  nivel: 'iniciante' | 'avancado';
+}
+
+async function fetchCursos() {
+  const response = await fetch('https://api.origamid.dev/json/cursos.json');
+  const data = await response.json();
+  mostrarCursos(data);
+}
+```
+
+### Array - Alternative Syntax
+```ts
+const numbers = [10, 30, 40, 5, 3, 30];
+
+function greaterThan10(data: Array<number>) {
+  return data.filter((n) => n > 10);
+}
+```
+
+### Any
+```ts
+//basically normal javascript ;P
+function normalize(text: any) {
+  return text.trim().toLowerCase();
+}
+
+normalize(' DeSIGN');
+normalize(200); //error in runtime
+```
+

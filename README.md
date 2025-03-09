@@ -8,8 +8,8 @@
 ##### [⬇️ Install React (Vite)](./reference/frameworks/react/Vite-React-Install-Guide.md)
 
 ### TYPESCRIPT
-##### [🚀 TypeScript - Quick Tips](./reference/languages/typescript/QuickTips.md)
-##### [🚀 TypeScript - Interface](./reference/languages/typescript/InterfaceExamples.md)
+##### [➡️ TypeScript - Quick Revision](./reference/languages/typescript/QuickRevision.md)
+##### [❇️ TypeScript - Objects and Interfaces](./reference/languages/typescript/ObjectsAndInterfaces.md)
 
 ### SETTINGS ⚙
 ##### [💻 VS Code](./dotfiles/vscode.md)

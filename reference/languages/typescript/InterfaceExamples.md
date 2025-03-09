@@ -29,3 +29,18 @@ function showProduct(data: Product) {
    console.log(data.nome);
 }
 ```
+
+### Example 02 - optional parameter
+
+```js
+///optional parameter
+interface Product {
+  name?: string;
+}
+
+const game: Product {
+   name: "Ragnarok"
+}
+
+console.log(game.name?.toLowerCase());
+```
