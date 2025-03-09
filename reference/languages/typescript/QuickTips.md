@@ -102,3 +102,24 @@ interface Data {
    year: number;
 }
 ```
+
+### Array
+```ts
+const numbers = [10, 30, 40, 5, 3, 30];
+
+function greaterThan10(data: number[]) {
+  return data.filter((n) => n > 10);
+}
+
+greaterThan10(numbers);
+```
+
+```ts
+const arr = [10, "Coelho", 40, 5, "Marcus", 30];
+
+function onlyNumber(data: (string | number)[]) {
+  return data.filter((n) => typeof n === "number");
+}
+
+onlyNumber(arr);
+```
