@@ -1,5 +1,3 @@
-![](./imgs/mdbanner.png)
-
 ### REACT ⚛️
 ##### [🚀 React - Quick Tips](./reference/frameworks/react/QuickTips.md)
 ##### [🪝 React - Hooks](./reference/frameworks/react/ReactHooks.md)
@@ -14,3 +12,5 @@
 ### SETTINGS ⚙
 ##### [💻 VS Code](./dotfiles/vscode.md)
 ##### [💻 SublimeText](./dotfiles/sublime.md)
+
+![](./imgs/mdbanner.png)
