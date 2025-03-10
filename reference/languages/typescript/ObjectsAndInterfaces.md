@@ -102,3 +102,25 @@ button?.addEventListener('click', activeMenu);
 
 window.addEventListener('keydown', activeMenu);
 ```
+
+### Generic
+```ts
+function retorno<Tipo>(a: Tipo): Tipo {
+  return a;
+}
+
+retorno('A Game').charAt(0);
+// retorno<string>(a: string): string
+
+retorno(200).toFixed();
+// retorno<number>(a: number): number
+```
+
+### Generic Extends
+```ts
+function extractText<Tipo extends HTMLElement>(el: Tipo): string {
+  return el.innerText;
+}
+
+const link = document.querySelector('a');
+```
