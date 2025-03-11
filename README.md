@@ -9,6 +9,9 @@
 ##### [➡️ TypeScript - Quick Revision](./reference/languages/typescript/QuickRevision.md)
 ##### [❇️ TypeScript - Objects and Interfaces](./reference/languages/typescript/ObjectsAndInterfaces.md)
 
+### TAILWIND
+#### [➡️ TailWind v4 - Install](./reference/library/tailwind/install.md)
+
 ### SETTINGS ⚙
 ##### [💻 VS Code](./dotfiles/vscode.md)
 ##### [💻 SublimeText](./dotfiles/sublime.md)
