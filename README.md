@@ -10,7 +10,7 @@
 ##### [❇️ TypeScript - Objects and Interfaces](./reference/languages/typescript/ObjectsAndInterfaces.md)
 
 ### TAILWIND
-#### [➡️ TailWind v4 - Install](./reference/library/tailwind/install.md)
+#### [➡️ TailWind - Install](./reference/library/tailwind/install.md)
 
 ### SETTINGS ⚙
 ##### [💻 VS Code](./dotfiles/vscode.md)
