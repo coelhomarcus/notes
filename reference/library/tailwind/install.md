@@ -11,21 +11,6 @@ npm install tailwindcss @tailwindcss/vite
 # index.css
 @import "tailwindcss";
 ```
-create tailwind.config.js
-### tailwind.config.js
-```js
-/ @type {import('tailwindcss').Config} */
-export default {
-   content: [
-      "./index.html",
-      "./src//*.{js,ts,jsx,tsx}",
-   ],
-   theme: {
-      extend: {},
-   },
-   plugins: [],
-}
-```
 
 (melhor compatibilidade com a extensao :P)
 # Install Tailwind v3
@@ -37,4 +22,19 @@ npx tailwindcss init -p
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+```
+
+### tailwind.config.js
+```js
+/ @type {import('tailwindcss').Config} */
+export default {
+   content: [
+      "./index.html",
+      "./src/**/*.{js,ts,jsx,tsx}",
+   ],
+   theme: {
+      extend: {},
+   },
+   plugins: [],
+}
 ```
