@@ -11,6 +11,8 @@
 
 ### TAILWIND
 #### [➡️ TailWind - Install](./reference/library/tailwind/install.md)
+#### [➡️ TailWind - Quick Revision](./reference/library/tailwind/QuickRevision.md)
+
 
 ### SETTINGS ⚙
 ##### [💻 VS Code](./dotfiles/vscode.md)

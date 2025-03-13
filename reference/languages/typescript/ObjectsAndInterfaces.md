@@ -1,6 +1,6 @@
 # Objects & Interfaces
 
-### Recapping: class with TypeScript 
+### Recapping: class with TypeScript
 ```ts
 class Product {
   name: string;
@@ -44,7 +44,7 @@ class Game extends Product {
 const game = new Product('Dark Souls', 'Miyazaki');
 console.log(game instanceof Game); //true
 console.log(game instanceof Product); //true
-``` 
+```
 
 ```ts
 const link = document.getElementById("coelhomarcus");
@@ -105,6 +105,8 @@ window.addEventListener('keydown', activeMenu);
 
 ### Generic
 ```ts
+//defining that TIPO is a generic parameter
+//for example, if you put <number> it will give an error
 function retorno<Tipo>(a: Tipo): Tipo {
   return a;
 }
@@ -124,3 +126,63 @@ function extractText<Tipo extends HTMLElement>(el: Tipo): string {
 
 const link = document.querySelector('a');
 ```
+
+### Functions
+#### Void
+```ts
+//void to a function that return nothing
+function noReturn(color: string): void{
+   document.body.style.background = color;
+}
+```
+
+#### Never
+```ts
+//Abort the code when an error occurs, and stop running.
+function abort(msg: string): never {
+   throw new Error(msg);
+}
+
+abort("Error");
+console.log("dont run");
+```
+
+#### w/ Interface
+```js
+interface Square {
+   side: number;
+   perimeter(side: number): number;
+}
+
+function calc(shape: Square) {
+   return shape.perimeter(shape.side);
+}
+
+const squareExample: Square = {
+   side: 2,
+   perimeter(side) {
+      return side * side;
+   }
+}
+
+console.log(calc(squareExample)); //4
+```
+
+#### Overload
+```ts
+// Exemplo 1
+function normalizar(valor: string): string;
+function normalizar(valor: string[]): string[];
+function normalizar(valor: string | string[]): string | string[] {
+  if (typeof valor === "string") {
+    return valor.trim().toLowerCase();
+  } else {
+    return valor.map((item) => item.trim().toLowerCase());
+  }
+}
+
+normalizar(" Produto ");
+normalizar(["Banana ", " UVA"]);
+```
+
+### TypeGuard, Safety e Narrowing
