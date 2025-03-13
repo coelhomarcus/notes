@@ -65,7 +65,6 @@ const App = () => {
 };
 ```
 
-
 ###### **Components**
 ```jsx
 import Header from "./Header/Header"

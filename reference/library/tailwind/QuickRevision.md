@@ -15,7 +15,6 @@
 <div className="shadow-[0px_4px_4px_4px_rgba(0,0,0,0.25)]">Hello</div>
 ```
 
-
 ### Modificadores
 ```jsx
 <div className="*:bg-gray-300 *:p-4">

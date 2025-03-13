@@ -10,8 +10,8 @@
 ##### [❇️ TypeScript - Objects and Interfaces](./reference/languages/typescript/ObjectsAndInterfaces.md)
 
 ### TAILWIND
-#### [➡️ TailWind - Install](./reference/library/tailwind/install.md)
-#### [➡️ TailWind - Quick Revision](./reference/library/tailwind/QuickRevision.md)
+#### [🌬️ Tailwind - Install](./reference/library/tailwind/install.md)
+#### [🍃 Tailwind - Quick Revision](./reference/library/tailwind/QuickRevision.md)
 
 
 ### SETTINGS ⚙

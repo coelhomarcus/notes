@@ -1,4 +1,10 @@
 
+### INSTALL
+```bash
+npm create vite@latest .
+
+npm install
+```
 #### RUN
 ```bash
 npm run dev
@@ -6,13 +12,6 @@ npm run dev
 #### BUILD
 ```bash
 npm run build
-```
-
-### INSTALL
-```bash
-npm create vite@latest .
-
-npm install
 ```
 
 ##### Minimal Folder Structure
