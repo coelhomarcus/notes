@@ -186,3 +186,156 @@ normalizar(["Banana ", " UVA"]);
 ```
 
 ### TypeGuard, Safety e Narrowing
+
+```ts
+function isString(value: unknown): value is string {
+  return typeof value === 'string';
+}
+
+function handleData(data: unknown) {
+  if (isString(data)) {
+    data.toUpperCase();
+  }
+}
+
+handleData('Origamid');
+handleData(200);
+```
+
+```ts
+async function fetchProduto() {
+  const response = await fetch('https://api.origamid.dev/json/notebook.json');
+  const json = await response.json();
+  handleProduto(json);
+}
+fetchProduto();
+
+interface Produto {
+  nome: string;
+  preco: number;
+}
+
+function isProduto(value: unknown): value is Produto {
+  if (
+    value &&
+    typeof value === 'object' &&
+    'nome' in value &&
+    'preco' in value
+  ) {
+    return true;
+  } else {
+    return false;
+  }
+}
+
+function handleProduto(data: unknown) {
+  if (isProduto(data)) {
+    console.log(data);
+  }
+}
+```
+
+
+#### Unknown
+```ts
+function test(data: unknown);
+```
+
+#### Type Assertion
+##### as
+```ts
+const video = document.querySelector('.player') as HTMLVideoElement;
+// erro runtime, não existe volume de null
+video.volume;
+
+// erro TS, possíveis dados devem ser compatíveis com Element | null
+const link = document.querySelector('.link') as string;
+```
+##### as with function that return any
+```ts
+interface Produto {
+  nome: string;
+  preco: number;
+}
+
+async function fetchProduto() {
+  const response = await fetch('https://api.origamid.dev/json/notebook.json');
+  return response.json() as Promise<Produto>;
+}
+
+// Podemos usar o as em diferentes locais.
+async function handleProduto1() {
+  const produto = await fetchProduto();
+  produto.nome;
+}
+```
+```ts
+async function fetchProduto() {
+  const response = await fetch('https://api.origamid.dev/json/notebook.json');
+  return response.json();
+}
+
+async function handleProduto2() {
+  const produto = (await fetchProduto()) as Produto;
+  produto.nome;
+}
+```
+
+### Destructuring
+
+```ts
+const { body }: { body: HTMLElement } = document;
+
+function handleData({ nome, preco }: { nome: string; preco: number }) {
+  nome.includes('book');
+  preco.toFixed();
+}
+
+handleData({
+  nome: 'Notebook',
+  preco: 2000,
+});
+
+```
+
+### Rest
+
+```ts
+function comparar(tipo: 'maior' | 'menor', ...numeros: number[]) {
+  if (tipo === 'maior') {
+    return Math.max(...numeros);
+  }
+  if (tipo === 'menor') {
+    return Math.min(...numeros);
+  }
+}
+
+console.log(comparar('maior', 3, 2, 4, 30, 5, 6, 20));
+console.log(comparar('menor', 3, 2, 4, 1, 5, 6, 20));
+```
+
+#### Intersection
+
+```ts
+type Produto = {
+  preco: number;
+};
+
+type Carro = {
+  rodas: number;
+  portas: number;
+};
+
+function handleProdutoCarro(dados: Carro & Produto) {
+  dados.rodas;
+  dados.portas;
+  dados.preco;
+}
+
+handleProdutoCarro({
+  preco: 20000,
+  rodas: 4,
+  portas: 5,
+});
+
+```
