@@ -93,6 +93,17 @@ function example(data: Data) {
 //another example
 type numberOrString = number | string;
 ```
+```ts
+// Union Types
+type Status = "ativo" | "inativo" | "pendente";
+
+// Tupla
+type Venda = [string, number, boolean];
+
+// Interseção de tipos
+type Pessoa = { nome: string };
+type Usuario = Pessoa & { email: string };
+```
 
 ### Interface
 

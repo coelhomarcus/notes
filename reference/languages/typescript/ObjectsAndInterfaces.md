@@ -337,5 +337,6 @@ handleProdutoCarro({
   rodas: 4,
   portas: 5,
 });
-
 ```
+
+### Others: keyof, class, tuples.
