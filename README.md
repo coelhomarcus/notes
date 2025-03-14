@@ -19,6 +19,6 @@
 ##### [💻 SublimeText](./dotfiles/sublime.md)
 
 ### Portuguese Section 🇧🇷
-#### [Perguntas para Entrevistas](Perguntas.md)
+#### [Perguntas para Entrevistas](./ptbr-section/Perguntas.md)
 
 ![](./imgs/mdbanner.png)
