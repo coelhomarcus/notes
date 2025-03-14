@@ -18,4 +18,7 @@
 ##### [💻 VS Code](./dotfiles/vscode.md)
 ##### [💻 SublimeText](./dotfiles/sublime.md)
 
+### Portuguese Section 🇧🇷
+#### [Perguntas para Entrevistas](Perguntas.md)
+
 ![](./imgs/mdbanner.png)
