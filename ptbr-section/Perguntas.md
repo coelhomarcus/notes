@@ -69,6 +69,31 @@ a diferença é que o redux é mais flexivel e escalavel, e tudo fica salvo em u
 Redux para aplicações que tendem a crescer.
 Context API para aplicações leves / simples.
 
+### O que são props no React e como elas são utilizadas?
+
+Basicamente são propriedades passadas na inicialização de um componente, podendo compartilhar informações do pai para o filho
+
+### O que acontece quando um componente é re-renderizado no React?
+
+Ë feita uma comparação do virtual dom antigo com o novo para que seja alterado apenas as coisas necessárias
+
+### O que é o hook useRef e em quais situações ele pode ser útil? 
+
+Ele é utilizado para referenciar um elemento html/jsx.
+Assim podendo altera-lo e acessar informações do mesmo.
+
+### Como evitar re-renderizações desnecessárias em uma aplicação React?
+
+- React.memo -> para componentes que os props nao alteraram
+- useMemo -> para variaveis
+- useCallback -> para memorizar funções
+- useEffect -> controlando com dependencias
+- keys -> em listas (exemplo: map)
+
+### Uso do context API ou de um estado global como Redux 
+
+Por exemplo quando tenho dois componentes que não tem ligação direta, então podemos usar o useContext ou store do redux para compartilhar essas informaçÕes
+
 ## JavaScript e TypeScript
 
 ### Qual a diferença entre `let`, `const` e `var` em JavaScript?
