@@ -2,11 +2,19 @@
 
 ### Vite + TailwindCSS
 ```bash
-npm create vite@latest
+npm create vite@latest .
 
 npm install
 
 npm install tailwindcss @tailwindcss/vite
+
+# vite.config.ts
+import tailwindcss from '@tailwindcss/vite'
+export default defineConfig({
+  plugins: [
+    tailwindcss(),
+  ],
+})
 
 # index.css
 @import "tailwindcss";
