@@ -1,8 +1,8 @@
-### my vscode settings
+### Minhas configurações do Visual Studio Code
 
-- Theme: `BakaNeo`
-- Icons: `Symbols`
-- Font: `FiraCode Nerd Font`
+- Tema: `BakaNeo`
+- Icone: `Symbols`
+- Fonte: `FiraCode Nerd Font`
 
 #### `settings.json`
 
