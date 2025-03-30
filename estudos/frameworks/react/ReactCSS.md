@@ -1,10 +1,11 @@
 # React CSS
 
-### **Default Method** - import through JavaScript
-```jsx
-import './App.css';
+### Jeito padrão - importando o .css
 
-//className="container" -> container is inside of App.css
+```jsx
+import "./App.css";
+
+//className="container" -> a classe container esta dentro do App.css que importamos
 const App = () => {
   return (
     <div className="container">
@@ -14,11 +15,12 @@ const App = () => {
 };
 ```
 
-### **CSS Modules** - (camelCase in class names)
-```jsx
-import styles from './Produto.module.css';
+### CSS Modules -> aqui as classes são em camelCase e são unicas
 
-//styles.title == class -> .title in Produto.module.css
+```jsx
+import styles from "./Produto.module.css";
+
+//styles.title é a classe .title no Produto.module.css
 
 const App = () => {
   return (

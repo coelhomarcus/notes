@@ -1,8 +1,8 @@
 ### my vscode settings
 
-- Theme: `Vesper` 
-- Icons: `Symbols` 
-- Font: `FiraCode Nerd Font` 
+- Theme: `BakaNeo`
+- Icons: `Symbols`
+- Font: `FiraCode Nerd Font`
 
 #### `settings.json`
 
@@ -12,8 +12,6 @@
   "workbench.startupEditor": "none",
   "workbench.tree.enableStickyScroll": false,
   "workbench.tree.indent": 24,
-  "workbench.colorTheme": "Vesper",
-  "workbench.iconTheme": "symbols",
   "explorer.confirmDelete": false,
   "explorer.compactFolders": false,
   "explorer.confirmPasteNative": false,
@@ -25,7 +23,6 @@
   "window.titleBarStyle": "custom",
   "terminal.integrated.env.windows": {},
   "terminal.integrated.defaultProfile.windows": "Command Prompt",
-  "editor.fontFamily": "FiraCode Nerd Font, monospace",
   "editor.fontSize": 16,
   "editor.lineHeight": 2,
   "editor.fontLigatures": true,
@@ -39,6 +36,6 @@
   "workbench.sideBar.location": "right",
   "workbench.activityBar.location": "top",
   "window.menuBarVisibility": "compact",
-  "window.commandCenter": false,
+  "window.commandCenter": false
 }
 ```

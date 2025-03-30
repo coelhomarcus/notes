@@ -1,6 +1,7 @@
+# Revisão
 
-# Quick Tips 🚀
-###### A **component** always return a single element
+###### Um componente sempre retorna apenas 1 elemento
+
 ```jsx
 const ButtonBuy = () => {
   return <button>Buy</button>;
@@ -9,18 +10,19 @@ const ButtonBuy = () => {
 //or
 
 const App = () => {
-  return(
-	  <>
-		  <h1>Best button in the world</h1>
-		  <ButtonBuy />
-	  </>
+  return (
+    <>
+      <h1>Best button in the world</h1>
+      <ButtonBuy />
+    </>
   );
 };
 
 // <></> means <React.Fragment></React.Fragment>
 ```
 
-###### **HTML tags** contain attributes, but in **camelCase** in **React**.
+###### As tags html no JSX tem os atributos em camelCase
+
 ```jsx
 //Attributes examples
 const App = () => {
@@ -33,11 +35,12 @@ const App = () => {
 };
 ```
 
-###### **Expressions** / **Variables**
+###### Expressões e Variaveis
+
 ```jsx
 const App = () => {
-	const name = "Marcus";
-	return <p>{name}</p>;
+  const name = "Marcus";
+  return <p>{name}</p>;
 };
 
 //Another example
@@ -45,15 +48,15 @@ const App = () => {
 const active = true;
 
 const App = () => {
-	return <p className={active ? "activeClass" : "disableClass"}>text</p>;
+  return <p className={active ? "activeClass" : "disableClass"}>text</p>;
 };
-
 ```
 
 ###### **Array**
+
 ```jsx
 const App = () => {
-  const movies = ['Before Sunrise', 'Before Sunset', 'Before Midnight'];
+  const movies = ["Before Sunrise", "Before Sunset", "Before Midnight"];
 
   return (
     <ul>
@@ -65,7 +68,8 @@ const App = () => {
 };
 ```
 
-###### **Components**
+###### Componentes
+
 ```jsx
 import Header from "./Header/Header"
 import Footer from "./Footer/Footer"
@@ -79,9 +83,10 @@ const App = () => {
 };
 ```
 
-###### **Component** receive props
+###### Um componente pode receber um props
+
 ```jsx
-import Button from "./Button/Button"
+import Button from "./Button/Button";
 
 const App = () => {
   return (
@@ -90,36 +95,30 @@ const App = () => {
   );
 };
 
-//Button.jsx with destructuring 
-const Button = ({myProp}) => {
-  return (
-    <button>{myProp}</button>
-  );
+//Button.jsx com desestruturação
+const Button = ({ myProp }) => {
+  return <button>{myProp}</button>;
 };
 
-//Button.jsx with no destructuring 
+//Button.jsx sem desestruturação
 const Button = (props) => {
-  return (
-    <button>{props.myProp}</button>
-  );
+  return <button>{props.myProp}</button>;
 };
 ```
 
-###### **Component** children
+###### {children} do Componente
+
 ```jsx
-import Button from "./Button/Button"
+import Button from "./Button/Button";
 
 const App = () => {
   return (
     <Button>My Button</Button>
-    //"My Button" is a child of Button
+    //"My Button" é fo {children} do button
   );
 };
 
 const Button = (props) => {
-  return (
-    <button>{props.children}</button> 
-  );
+  return <button>{props.children}</button>;
 };
-
 ```

@@ -1,24 +1,31 @@
-### REACT ⚛️
-##### [🚀 React - Quick Tips](./reference/frameworks/react/QuickTips.md)
-##### [🪝 React - Hooks](./reference/frameworks/react/ReactHooks.md)
-##### [🛣️ React - Router](./reference/frameworks/react/ReactRouter.md)
-##### [💠 React - CSS](./reference/frameworks/react/ReactCSS.md)
-##### [⬇️ Install React (Vite)](./reference/frameworks/react/Vite-React-Install-Guide.md)
+### Repositorio feito para estudos e salvar algumas configurações.
+
+### NODE JS
+
+##### [Node - Revisão](./estudos/frameworks/nodejs/Revision.md)
+
+### REACT
+
+##### [React - Dicas / Revisão](./estudos/frameworks/react/QuickTips.md)
+
+##### [React - Hooks](./estudos/frameworks/react/ReactHooks.md)
+
+##### [React - Router](./estudos/frameworks/react/ReactRouter.md)
+
+##### [React - CSS](./estudos/frameworks/react/ReactCSS.md)
 
 ### TYPESCRIPT
-##### [➡️ TypeScript - Quick Revision](./reference/languages/typescript/QuickRevision.md)
-##### [❇️ TypeScript - Objects and Interfaces](./reference/languages/typescript/ObjectsAndInterfaces.md)
+
+##### [TypeScript - Revisão](./estudos/linguagens/typescript/QuickRevision.md)
+
+##### [TypeScript - Objects e Interfaces](./estudos/linguagens/typescript/ObjectsAndInterfaces.md)
 
 ### TAILWIND
-#### [🌬️ Tailwind - Install](./reference/library/tailwind/install.md)
-#### [🍃 Tailwind - Quick Revision](./reference/library/tailwind/QuickRevision.md)
 
+#### [Tailwind - Revisão](./estudos/bibliotecas/tailwind/QuickRevision.md)
 
 ### SETTINGS ⚙
-##### [💻 VS Code](./dotfiles/vscode.md)
-##### [💻 SublimeText](./dotfiles/sublime.md)
 
-### Portuguese Section 🇧🇷
-#### [Perguntas para Entrevistas](./ptbr-section/Perguntas.md)
+##### [Visual Studio Code](./dotfiles/vscode.md)
 
 ![](./imgs/mdbanner.png)

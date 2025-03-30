@@ -1,0 +1,209 @@
+# React Hooks
+
+Não use hooks dentro de funções, loops ou condicionais.
+Hooks só devem ser usado usados dentro de funções se forem Custom Hooks.
+
+### **useState**
+
+```jsx
+const App = () => {
+  //useState(0)
+  //0 é o valor inicial do contador
+  const [count, setCount] = React.useState(0);
+
+  function handleClick() {
+    setCount(count + 1);
+  }
+
+  return <button onClick={handleClick}>my button</button>;
+};
+```
+
+### **useEffect**
+
+```jsx
+const App = () => {
+  const [count, setCount] = React.useState(0);
+
+  React.useEffect(() => {
+    console.log("count mudou");
+  }, [count]);
+
+  function handleClick() {
+    setCount(count + 1);
+  }
+
+  return <button onClick={handleClick}>my button</button>;
+};
+```
+
+```jsx
+const App = () => {
+  React.useEffect(() => {
+    console.log("Roda uma vez");
+  }, []);
+
+  return <div>hello</div>;
+};
+```
+
+```jsx
+const App = () => {
+  React.useEffect(() => {
+    function handleScroll(event) {
+      console.log(event);
+    }
+    window.addEventListener("scroll", handleScroll);
+    // Limpa o evento no retorno da função
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
+  return <p style={{ height: "200vh" }}>Scroll gigante</p>;
+};
+```
+
+### **useRef**
+
+```jsx
+const App = () => {
+  //Usado para referenciar um elemento
+  const button = React.useRef();
+
+  console.log(button.current);
+  //<button ref={button}>meu button</button>
+
+  return <button ref={button}>meu button</button>;
+};
+```
+
+```jsx
+const timeoutRef = React.useRef();
+
+//Tambem usado para salvar uma variavel que não muda entre as renderizações
+
+function handleClick() {
+  setNotification("Thanks for buy");
+
+  clearTimeout(timeoutRef.current);
+
+  timeoutRef.current = setTimeout(() => {
+    setNotification(null);
+  }, 1000);
+}
+```
+
+### **useContext**
+
+useContext será usado para mandar variavels, funções ou outros tipos de dados para seus componentes filhos.
+
+```jsx
+//App.jsx
+import React from "react";
+import Product from "./Product";
+import { GlobalStorage } from "./GlobalContext";
+
+const App = () => {
+  return (
+    <GlobalStorage>
+            <Product />   {" "}
+    </GlobalStorage>
+  );
+};
+
+export default App;
+```
+
+```jsx
+//GlobalStorage.jsx
+import React from "react";
+
+export const GlobalContext = React.createContext();
+
+export const GlobalStorage = ({ children }) => {
+  const [data, setData] = React.useState(null);
+
+  return (
+    <GlobalContext.Provider value={{ data }}>
+                  {children}       {" "}
+    </GlobalContext.Provider>
+  );
+};
+```
+
+```jsx
+//Product.jsx
+import React from "react";
+import { GlobalContext } from "./GlobalContext";
+
+const Product = () => {
+  const global = React.useContext(GlobalContext);
+  return <div>{global.data}</div>;
+};
+
+export default Product;
+```
+
+### **Custom Hooks**
+
+Um Custom Hook sempre começará com 'use'. Exemplo `useCustomHook.jsx`.
+
+```jsx
+import React from "react";
+
+const useFetch = () => {
+  const [data, setData] = React.useState(null);
+  const [error, setError] = React.useState(null);
+  const [loading, setLoading] = React.useState(null);
+
+  const request = React.useCallback(async (url, options) => {
+    let response;
+    let json;
+    try {
+      setError(null);
+      setLoading(true);
+      response = await fetch(url, options);
+      json = await response.json();
+      if (response.ok === false) throw new Error(json.message);
+    } catch (err) {
+      json = null;
+      setError(err.message);
+    } finally {
+      setData(json);
+      setLoading(false);
+      return { response, json };
+    }
+  }, []);
+
+  return { data, loading, error, request };
+};
+
+export default useFetch;
+```
+
+```jsx
+//App.jsx
+import React from "react";
+import useFetch from "./useFetch";
+
+const App = () => {
+  const { data, loading, error, request } = useFetch();
+
+  React.useEffect(() => {
+    request("https://ranekapi.origamid.dev/json/api/produto/notebook");
+  }, [request]);
+
+  if (error) return <p>{error}</p>;
+  if (loading) return <p>Carregando...</p>;
+  if (data) return <div>{data.nome}</div>;
+  else return null;
+};
+
+export default App;
+```
+
+### **Outros React Rooks**
+
+- **useMemo**
+- **useCallback (importante para Custom Hooks)**
