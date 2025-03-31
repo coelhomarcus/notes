@@ -4,6 +4,8 @@
 
 ##### [Node - Revisão](./estudos/frameworks/nodejs/Revisao.md)
 
+##### [Node - Express.js](./estudos/frameworks/nodejs/Express.md)
+
 ### REACT
 
 ##### [React - Dicas / Revisão](./estudos/frameworks/react/Revisao.md)
