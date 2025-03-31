@@ -2,11 +2,11 @@
 
 ### NODE JS
 
-##### [Node - Revisão](./estudos/frameworks/nodejs/Revision.md)
+##### [Node - Revisão](./estudos/frameworks/nodejs/Revisao.md)
 
 ### REACT
 
-##### [React - Dicas / Revisão](./estudos/frameworks/react/QuickTips.md)
+##### [React - Dicas / Revisão](./estudos/frameworks/react/Revisao.md)
 
 ##### [React - Hooks](./estudos/frameworks/react/ReactHooks.md)
 
@@ -16,13 +16,15 @@
 
 ### TYPESCRIPT
 
-##### [TypeScript - Revisão](./estudos/linguagens/typescript/QuickRevision.md)
+##### [TypeScript - Revisão](./estudos/linguagens/typescript/Revisao.md)
 
-##### [TypeScript - Objects e Interfaces](./estudos/linguagens/typescript/ObjectsAndInterfaces.md)
+##### [TypeScript - Objects e Interfaces](./estudos/linguagens/typescript/ObjectsEInterfaces.md)
+
+##### [TypeScript - Exemplo de Interface](./estudos/linguagens/typescript/Interface.md)
 
 ### TAILWIND
 
-#### [Tailwind - Revisão](./estudos/bibliotecas/tailwind/QuickRevision.md)
+#### [Tailwind - Revisão](./estudos/bibliotecas/tailwind/Revisao.md)
 
 ### SETTINGS ⚙
 
