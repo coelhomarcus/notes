@@ -1,12 +1,12 @@
 ### Repositorio feito para estudos e salvar algumas configurações.
 
-### NODE JS
+### Node.js
 
 ##### [Node - Revisão](./estudos/frameworks/nodejs/Revisao.md)
 
 ##### [Node - Express.js](./estudos/frameworks/nodejs/Express.md)
 
-### REACT
+### React
 
 ##### [React - Dicas / Revisão](./estudos/frameworks/react/Revisao.md)
 
@@ -16,7 +16,7 @@
 
 ##### [React - CSS](./estudos/frameworks/react/ReactCSS.md)
 
-### TYPESCRIPT
+### Typescript
 
 ##### [TypeScript - Revisão](./estudos/linguagens/typescript/Revisao.md)
 
@@ -24,11 +24,11 @@
 
 ##### [TypeScript - Exemplo de Interface](./estudos/linguagens/typescript/Interface.md)
 
-### TAILWIND
+### Tailwind
 
 #### [Tailwind - Revisão](./estudos/bibliotecas/tailwind/Revisao.md)
 
-### SETTINGS ⚙
+### Configurações ⚙
 
 ##### [Visual Studio Code](./dotfiles/vscode.md)
 
