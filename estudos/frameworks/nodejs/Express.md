@@ -98,3 +98,32 @@ app.listen(port, () => {
   console.log(`Servidor rodando na porta ${port}`);
 });
 ```
+
+### Criando o proprio Middleware
+
+```js
+import express from "express";
+
+const app = express();
+
+//Criando meu proprio Middleware
+function logger(req, res, next) {
+  //Apenas testes
+  console.log("O URL da requisição é: " + req.url);
+  console.log("O METHOD da requisição é: " + req.method);
+  //passa para o prodixo middleware ou continua o codigo
+  //se esquecer do next(); a requisição vai carregar infinito e nao ira concluir
+  next();
+}
+
+//Utilizando o middleware
+app.use(logger);
+
+app.get("/", (req, res) => {
+  res.send("Olá");
+});
+
+app.listen(3000, () => {
+  console.log("Servidor rodando na porta 3000");
+});
+```
