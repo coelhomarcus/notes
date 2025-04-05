@@ -1,5 +1,11 @@
 ### Repositorio feito para estudos e salvar algumas configurações.
 
+### Rest API
+
+##### [Rest API - Revisão](./estudos/outros/api.md)
+
+##### [Rest API - Criando uma api](./estudos/outros/criandoapi.md)
+
 ### Node.js
 
 ##### [Node - Revisão](./estudos/frameworks/nodejs/Revisao.md)
