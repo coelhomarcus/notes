@@ -4,6 +4,8 @@
 
 ##### [Postgres SQL - Revisão](./estudos/postgres/postgresql.md)
 
+##### [Express.js - Postgres](./estudos/nodejs/express-postgres.md)
+
 ### Rest API
 
 ##### [Rest API - Revisão](./estudos/api-express/api.md)
@@ -15,6 +17,8 @@
 ##### [Node - Revisão](./estudos/nodejs/nodejs.md)
 
 ##### [Node - Express.js](./estudos/nodejs/expressjs.md)
+
+##### [Express.js - Postgres](./estudos/nodejs/express-postgres.md)
 
 ### React
 
