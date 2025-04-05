@@ -1,7 +1,5 @@
 ### Express
 
-Apesar de ser um framework vou deixar aqui.
-
 ### Instalação
 
 ```bash
