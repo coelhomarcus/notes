@@ -1,38 +1,42 @@
 ### Repositorio feito para estudos e salvar algumas configurações.
 
+### Postgres
+
+##### [Postgres SQL - Revisão](./estudos/postgres/postgresql.md)
+
 ### Rest API
 
-##### [Rest API - Revisão](./estudos/outros/api.md)
+##### [Rest API - Revisão](./estudos/api-express/api.md)
 
-##### [Rest API - Criando uma api](./estudos/outros/criandoapi.md)
+##### [Rest API - Criando uma API](./estudos/api-express/criandoapi.md)
 
 ### Node.js
 
-##### [Node - Revisão](./estudos/frameworks/nodejs/Revisao.md)
+##### [Node - Revisão](./estudos/nodejs/nodejs.md)
 
-##### [Node - Express.js](./estudos/frameworks/nodejs/Express.md)
+##### [Node - Express.js](./estudos/nodejs/expressjs.md)
 
 ### React
 
-##### [React - Dicas / Revisão](./estudos/frameworks/react/Revisao.md)
+##### [React - Dicas / Revisão](./estudos/react/react.md)
 
-##### [React - Hooks](./estudos/frameworks/react/ReactHooks.md)
+##### [React - Hooks](./estudos/react/react-hooks.md)
 
-##### [React - Router](./estudos/frameworks/react/ReactRouter.md)
+##### [React - Router](./estudos/react/react-router.md)
 
-##### [React - CSS](./estudos/frameworks/react/ReactCSS.md)
+##### [React - CSS](./estudos/react/react-css.md)
 
 ### Typescript
 
-##### [TypeScript - Revisão](./estudos/linguagens/typescript/Revisao.md)
+##### [TypeScript - Revisão](./estudos/typescript/typescript.md)
 
-##### [TypeScript - Objects e Interfaces](./estudos/linguagens/typescript/ObjectsEInterfaces.md)
+##### [TypeScript - Objects e Interfaces](./estudos/typescript/objects_interfaces.md)
 
-##### [TypeScript - Exemplo de Interface](./estudos/linguagens/typescript/Interface.md)
+##### [TypeScript - Exemplo de Interface](./estudos/typescript/interfaces.md)
 
 ### Tailwind
 
-#### [Tailwind - Revisão](./estudos/bibliotecas/tailwind/Revisao.md)
+#### [Tailwind - Revisão](./estudos/tailwind/tailwind.md)
 
 ### Configurações ⚙
 

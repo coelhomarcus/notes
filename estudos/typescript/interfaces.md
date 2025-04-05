@@ -1,5 +1,7 @@
-# Interface Examples 🔎
-### Example 01
+# Exemplods de Interfaces 🔎
+
+### Exemplo 1
+
 ```ts
 interface Empresa {
   nome: string;
@@ -18,7 +20,7 @@ interface Product {
 }
 
 async function fetchProduct() {
-  const response = await fetch('https://api.origamid.dev/json/notebook.json');
+  const response = await fetch("https://api.origamid.dev/json/notebook.json");
   const data = await response.json();
   showProduct(data);
 }
@@ -26,14 +28,14 @@ async function fetchProduct() {
 fetchProduct();
 
 function showProduct(data: Product) {
-   console.log(data.nome);
+  console.log(data.nome);
 }
 ```
 
-### Example 02 - optional parameter
+### Exemplo 2 - Parametros Opcionais
 
 ```js
-///optional parameter
+//Parametro Opcional
 interface Product {
   name?: string;
 }

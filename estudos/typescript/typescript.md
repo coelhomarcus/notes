@@ -1,10 +1,13 @@
 # Quick Revision
+
 ### Install
+
 ```bash
 npm install -g typescript
 tsc --init
 tsc -w
 ```
+
 ```json
 //tsconfig.json
 {
@@ -14,31 +17,32 @@ tsc -w
   }
 }
 ```
+
 ### Type Annotations
+
 ```ts
-//It is not used that much because we already know the type in the declaration.
-var username: string = "Marcus"
+//Isso não é muito usado pq o tipo ja é declarado na inicialização automaticamente
+var username: string = "Marcus";
 username = 2; //error
 username = "Leda"; //✅
 
-//Inference is mostly used in functions.
 function sum(a: number, b: number) {
-   return a + b;
-}
-//We can infer the return type of the function as well
-function sum(a: number, b: number): number {
-   return a + b;
-}
-```
-```ts
-//Example
-const steed = {
-   name: "Steed",
-   price: 2000
+  return a + b;
 }
 
-function transformPrice(product: { name: string, price: number }): string {
-   return "R$ " + product.price;
+function sum(a: number, b: number): number {
+  return a + b;
+}
+```
+
+```ts
+const steed = {
+  name: "Steed",
+  price: 2000,
+};
+
+function transformPrice(product: { name: string; price: number }): string {
+  return "R$ " + product.price;
 }
 
 console.log(transformPrice(steed));
@@ -46,53 +50,56 @@ console.log(transformPrice(steed));
 ```
 
 ### Union Types
+
 ```ts
 let total: string | number = 200;
 total = "Hello"; //✅
 ```
+
 ```ts
-function isNumber(value: number | number){
-   if(typeof value === 'number'){
-      return true;
-   }else{
-      return false;
-   }
+function isNumber(value: number | number) {
+  if (typeof value === "number") {
+    return true;
+  } else {
+    return false;
+  }
 }
 ```
 
-### Optional Chaining Operator
+### Operador Opcional
+
 ```ts
-const button = document.querySelector('button');
-//Only execute when button is different from null.
+const button = document.querySelector("button");
+//Apenas executa se o button for diferente de NULL
 button?.click();
 ```
 
 ### Type
+
 ```ts
-function example(data: {
-   name: string,
-   year: number
- }) {
-   console.log(data.name);
-   console.log(data.year);
- }
-```
-```ts
-//using type
-type Data = {
-   name: string;
-   year: number;
+function example(data: { name: string; year: number }) {
+  console.log(data.name);
+  console.log(data.year);
 }
+```
+
+```ts
+type Data = {
+  name: string;
+  year: number;
+};
 
 function example(data: Data) {
-   console.log(data.name);
-   console.log(data.year);
+  console.log(data.name);
+  console.log(data.year);
 }
 ```
+
 ```ts
-//another example
+//Outro exemplo
 type numberOrString = number | string;
 ```
+
 ```ts
 // Union Types
 type Status = "ativo" | "inativo" | "pendente";
@@ -110,14 +117,15 @@ type Usuario = Pessoa & { email: string };
 ##### [❇️ interface - more examples](./InterfaceExamples.md)
 
 ```ts
-//most used for objects
+//Mais usados em objetos
 interface Data {
-   name: string;
-   year: number;
+  name: string;
+  year: number;
 }
 ```
 
 ### Array
+
 ```ts
 const numbers = [10, 30, 40, 5, 3, 30];
 
@@ -146,17 +154,18 @@ interface Curso {
   gratuito: boolean;
   tags: string[];
   idAulas: number[];
-  nivel: 'iniciante' | 'avancado';
+  nivel: "iniciante" | "avancado";
 }
 
 async function fetchCursos() {
-  const response = await fetch('https://api.origamid.dev/json/cursos.json');
+  const response = await fetch("https://api.origamid.dev/json/cursos.json");
   const data = await response.json();
   mostrarCursos(data);
 }
 ```
 
-### Array - Alternative Syntax
+### Array - Sintaxe Alternativa
+
 ```ts
 const numbers = [10, 30, 40, 5, 3, 30];
 
@@ -166,13 +175,12 @@ function greaterThan10(data: Array<number>) {
 ```
 
 ### Any
+
 ```ts
-//basically normal javascript ;P
 function normalize(text: any) {
   return text.trim().toLowerCase();
 }
 
-normalize(' DeSIGN');
-normalize(200); //error in runtime
+normalize(" DeSIGN");
+normalize(200); //erro no runtime
 ```
-
