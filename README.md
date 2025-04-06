@@ -1,4 +1,4 @@
-### Repositorio feito para estudos e salvar algumas configurações.
+![](./imgs/banner.png)
 
 ## Postgres
 
@@ -40,10 +40,8 @@
 
 ## Tailwind
 
-#### [Tailwind - Revisão](./estudos/tailwind/tailwind.md)
+- [Tailwind - Revisão](./estudos/tailwind/tailwind.md)
 
 ## Minhas Configs
 
 - [Visual Studio Code](./dotfiles/vscode.md)
-
-![](./imgs/mdbanner.png)
