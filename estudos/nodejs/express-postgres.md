@@ -107,3 +107,13 @@ app.listen(3000, () => {
   console.log("Servidor rodando na porta 3000");
 });
 ```
+
+### Comparação de SENHA com HASH - BCRYPT
+
+```js
+bcrypt(senhaINPUT, senhaHASH, (err, result) => {
+  if (result) {
+    //resto é contigo
+  }
+});
+```
