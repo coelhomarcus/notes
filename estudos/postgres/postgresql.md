@@ -8,7 +8,7 @@
 
 ```sql
 CREATE TABLE Amigos (
-    id SERIAL PRIMARY KEY,
+    id INT PRIMARY KEY,
     nome VARCHAR(50),
     idade INT
 );
