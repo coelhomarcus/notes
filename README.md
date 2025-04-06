@@ -1,49 +1,49 @@
 ### Repositorio feito para estudos e salvar algumas configurações.
 
-### Postgres
+## Postgres
 
-##### [Postgres SQL - Revisão](./estudos/postgres/postgresql.md)
+- [Postgres SQL - Revisão](./estudos/postgres/postgresql.md)
 
-##### [Express.js - Postgres](./estudos/nodejs/express-postgres.md)
+- [Express.js - Postgres - Bcrypt](./estudos/nodejs/express-postgres.md)
 
-### Rest API
+## Rest API
 
-##### [Rest API - Revisão](./estudos/api-express/api.md)
+- [Rest API - Revisão](./estudos/api-express/api.md)
 
-##### [Rest API - Criando uma API](./estudos/api-express/criandoapi.md)
+- [Rest API - Criando uma API](./estudos/api-express/criandoapi.md)
 
-### Node.js
+## Node.js
 
-##### [Node - Revisão](./estudos/nodejs/nodejs.md)
+- [Node - Revisão](./estudos/nodejs/nodejs.md)
 
-##### [Node - Express.js](./estudos/nodejs/expressjs.md)
+- [Node - Express.js](./estudos/nodejs/expressjs.md)
 
-##### [Express.js - Postgres](./estudos/nodejs/express-postgres.md)
+- [Express.js - Postgres](./estudos/nodejs/express-postgres.md)
 
-### React
+## React
 
-##### [React - Dicas / Revisão](./estudos/react/react.md)
+- [React - Dicas / Revisão](./estudos/react/react.md)
 
-##### [React - Hooks](./estudos/react/react-hooks.md)
+- [React - Hooks](./estudos/react/react-hooks.md)
 
-##### [React - Router](./estudos/react/react-router.md)
+- [React - Router](./estudos/react/react-router.md)
 
-##### [React - CSS](./estudos/react/react-css.md)
+- [React - CSS](./estudos/react/react-css.md)
 
-### Typescript
+## Typescript
 
-##### [TypeScript - Revisão](./estudos/typescript/typescript.md)
+- [TypeScript - Revisão](./estudos/typescript/typescript.md)
 
-##### [TypeScript - Objects e Interfaces](./estudos/typescript/objects_interfaces.md)
+- [TypeScript - Objects e Interfaces](./estudos/typescript/objects_interfaces.md)
 
-##### [TypeScript - Exemplo de Interface](./estudos/typescript/interfaces.md)
+- [TypeScript - Exemplo de Interface](./estudos/typescript/interfaces.md)
 
-### Tailwind
+## Tailwind
 
 #### [Tailwind - Revisão](./estudos/tailwind/tailwind.md)
 
-### Configurações ⚙
+## Minhas Configs
 
-##### [Visual Studio Code](./dotfiles/vscode.md)
+- [Visual Studio Code](./dotfiles/vscode.md)
 
 ![](./imgs/mdbanner.png)
