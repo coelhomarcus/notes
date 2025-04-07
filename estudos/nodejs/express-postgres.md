@@ -1,4 +1,6 @@
 # Express com Postgres
+### Se eu quiser utilizar um login mais robusto, da pra entegrar com o google e etc, alem da persistencia de login com cookies. Utilizando:
+- Passport
 
 ```js
 import express from "express";
