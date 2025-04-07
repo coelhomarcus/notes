@@ -1,8 +1,7 @@
 ### Minhas configurações do Visual Studio Code
 
-- Tema: `BakaNeo`
-- Icone: `Symbols`
-- Fonte: `FiraCode Nerd Font`
+- Tema: `bakaneo`
+- Icone: `symbols`
 
 #### `settings.json`
 
@@ -21,8 +20,6 @@
   "window.restoreWindows": "none",
   "window.confirmSaveUntitledWorkspace": false,
   "window.titleBarStyle": "custom",
-  "terminal.integrated.env.windows": {},
-  "terminal.integrated.defaultProfile.windows": "Command Prompt",
   "editor.fontSize": 16,
   "editor.lineHeight": 2,
   "editor.fontLigatures": true,
@@ -35,7 +32,10 @@
   "breadcrumbs.enabled": false,
   "workbench.sideBar.location": "right",
   "workbench.activityBar.location": "top",
-  "window.menuBarVisibility": "compact",
-  "window.commandCenter": false
+  "window.commandCenter": false,
+  "remote.autoForwardPorts": false,
+  "remote.restoreForwardedPorts": false,
+  "remote.forwardOnOpen": false,
+  "liveServer.settings.donotShowInfoMsg": true
 }
 ```
