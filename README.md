@@ -1,25 +1,3 @@
-![](./imgs/banner.png)
-
-## Postgres
-
-- [Postgres SQL - Revisão](./estudos/postgres/postgresql.md)
-
-- [Express.js - Postgres - Bcrypt](./estudos/nodejs/express-postgres.md)
-
-## Rest API
-
-- [Rest API - Revisão](./estudos/api-express/api.md)
-
-- [Rest API - Criando uma API](./estudos/api-express/criandoapi.md)
-
-## Node.js
-
-- [Node - Revisão](./estudos/nodejs/nodejs.md)
-
-- [Node - Express.js](./estudos/nodejs/expressjs.md)
-
-- [Express.js - Postgres](./estudos/nodejs/express-postgres.md)
-
 ## React
 
 - [React - Dicas / Revisão](./estudos/react/react.md)
@@ -42,6 +20,22 @@
 
 - [Tailwind - Revisão](./estudos/tailwind/tailwind.md)
 
-## Minhas Configs
+## Postgres
 
-- [Visual Studio Code](./dotfiles/vscode.md)
+- [Postgres SQL - Revisão](./estudos/postgres/postgresql.md)
+
+- [Express.js - Postgres - Bcrypt](./estudos/nodejs/express-postgres.md)
+
+## Rest API
+
+- [Rest API - Revisão](./estudos/api-express/api.md)
+
+- [Rest API - Criando uma API](./estudos/api-express/criandoapi.md)
+
+## Node.js
+
+- [Node - Revisão](./estudos/nodejs/nodejs.md)
+
+- [Node - Express.js](./estudos/nodejs/expressjs.md)
+
+- [Express.js - Postgres](./estudos/nodejs/express-postgres.md)

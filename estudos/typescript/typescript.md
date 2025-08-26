@@ -114,8 +114,6 @@ type Usuario = Pessoa & { email: string };
 
 ### Interface
 
-##### [❇️ interface - more examples](./InterfaceExamples.md)
-
 ```ts
 //Mais usados em objetos
 interface Data {
