@@ -3,10 +3,10 @@
 ![Go](https://img.shields.io/badge/Go-00ADD8?style=plastic&logo=go&logoColor=white)
 ![React](https://img.shields.io/badge/React-3178C6?style=plastic&logo=react&logoColor=white)
 ![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=plastic&logo=typescript&logoColor=white)
-![Tailwind](https://img.shields.io/badge/Tailwind_CSS-06B6D4?style=plastic&logo=tailwindcss&logoColor=white)
+![Tailwind](https://img.shields.io/badge/Tailwind-CSS-06B6D4?style=plastic&logo=tailwindcss&logoColor=white)
 ![PostgreSQL](https://img.shields.io/badge/PostgreSQL-336791?style=plastic&logo=postgresql&logoColor=white)
 ![Node.js](https://img.shields.io/badge/Node.js-339933?style=plastic&logo=node.js&logoColor=white)
-![APIs REST](https://img.shields.io/badge/API_Express-339933?style=plastic)
+![APIs REST](https://img.shields.io/badge/API-Express-339933?style=plastic)
 
 ###
 
@@ -14,11 +14,11 @@
 
 | Tópico | Descrição |
 |--------|-----------|
-| [Inicio](./estudos/go/go-start.md) | Primeiros passos e sintaxe básica |
-| [Estruturas de Dados](./estudos/go/go-estrutura-dados.md) | `Arrays`, `slices`, `maps`, `structs`... |
-| [Tratamento de Erros](./estudos/go/go-errors.md) | Padrões de erro em `Go` |
-| [Readers & Writers](./estudos/go/go-readers-writers.md) | `Interfaces` de `IO` |
-| [Conceitos Avançados](./estudos/go/go-conceitos-av.md) | `Goroutines`, `channels` e mais |
+| [Inicio](./estudos/go/0-go-start.md) | Primeiros passos e sintaxe básica |
+| [Estruturas de Dados](./estudos/go/1-go-estrutura-dados.md) | `Arrays`, `slices`, `maps`, `structs`... |
+| [Conceitos Avançados](./estudos/go/2-go-conceitos-av.md) | `Goroutines`, `channels` e mais |
+| [Tratamento de Erros](./estudos/go/3-go-errors.md) | Padrões de erro em `Go` |
+| [Readers & Writers](./estudos/go/4-go-readers-writers.md) | `Interfaces` de `IO` |
 
 ###
 
@@ -37,8 +37,8 @@
 
 | Tópico | Descrição |
 |--------|-----------|
-| [Fundamentos](./estudos/typescript/typescript.md) | Tipos básicos e configuração |
-| [Objects & Interfaces](./estudos/typescript/objects_interfaces.md) | Mais sobre Tipagem |
+| [Fundamentos](./estudos/typescript/0-typescript.md) | Tipos básicos e configuração |
+| [Objects & Interfaces](./estudos/typescript/1-objects-interfaces.md) | Mais sobre Tipagem |
 
 ###
 
@@ -46,16 +46,16 @@
 
 | Tópico | Descrição |
 |--------|-----------|
-| [Revisão Simples](./estudos/tailwind/tailwind.md) | Classes utilitárias e Modificadores |
+| [Revisão Simples](./estudos/tailwind/0-tailwind.md) | Classes utilitárias e Modificadores |
 
 ### 🟢 Node.js + API
 
 | Tópico | Descrição |
 |--------|-----------|
-| [Fundamentos](./estudos/nodejs/nodejs.md) | `Event loop`, `módulos` e `npm` |
-| [Express.js](./estudos/nodejs/expressjs.md) | Framework web para `Node.js` |
-| [PostgreSQL Básico](./estudos/nodejs/postgresql.md) | `Queries`, `joins`... |
-| [Express + PostgreSQL](./estudos/nodejs/express-postgres.md) | Integração completa |
+| [Node.js](./estudos/nodejs/0-nodejs.md) | `Event loop`, `módulos` e `npm` |
+| [Express.js](./estudos/nodejs/1-expressjs.md) | Framework web para `Node.js` |
+| [PostgreSQL Básico](./estudos/nodejs/2-postgresql.md) | `Queries`, `joins`... |
+| [Express + PostgreSQL](./estudos/nodejs/3-express-postgres.md) | Integração completa |
 
 ###
 

@@ -119,3 +119,11 @@ func main() {
 	}
 }
 ```
+
+---
+
+## 📚 Navegação
+
+| **← Anterior** | **Atual** | **Próximo →** |
+|---|---|---|
+| [Conceitos Avançados](./2-go-conceitos-av.md) | **Tratamento de Erros** | [Readers & Writers](./4-go-readers-writers.md) |

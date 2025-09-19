@@ -49,3 +49,11 @@ func (MyWriter) Write(b []byte) (int, error) {
 	return len(b), nil
 }
 ```
+
+---
+
+## 📚 Navegação
+
+| **← Anterior** | **Atual** |
+|---|---|
+| [Tratamento de Erros](./3-go-errors.md) | **Readers & Writers** |

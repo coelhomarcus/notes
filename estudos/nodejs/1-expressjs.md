@@ -238,3 +238,11 @@ app.listen(3000, () => {
   console.log("Servidor rodando na porta 3000");
 });
 ```
+
+---
+
+## 📚 Navegação
+
+| **← Anterior** | **Atual** | **Próximo →** |
+|---|---|---|
+| [Node.js Básico](./0-nodejs.md) | **Express.js** | [PostgreSQL](./2-postgresql.md) |

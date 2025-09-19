@@ -50,3 +50,11 @@ func take(x *int) {
 	*x = 20
 }
 ```
+
+---
+
+## 📚 Navegação
+
+| **← Anterior** | **Atual** | **Próximo →** |
+|---|---|---|
+| [Estruturas de Dados](./1-go-estrutura-dados.md) | **Conceitos Avançados** | [Tratamento de Erros](./3-go-errors.md) |

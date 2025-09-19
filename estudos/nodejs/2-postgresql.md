@@ -20,3 +20,11 @@ CREATE TABLE Amigos (
 -- Sempre usar aspas simples em string!! Se não da erro
 INSERT INTO amigos VALUES (0, 'Marcus', 19);
 ```
+
+---
+
+## 📚 Navegação
+
+| **← Anterior** | **Atual** | **Próximo →** |
+|---|---|---|
+| [Express.js](./1-expressjs.md) | **PostgreSQL** | [Express + PostgreSQL](./3-express-postgres.md) |

@@ -449,3 +449,13 @@ const usuario: UsuarioCompleto = {
 ```
 
 ## Others: keyof, class, tuples.
+
+---
+
+## 📚 Navegação
+
+### 📖 Sequência de Estudo TypeScript
+
+| **← Anterior** | **Atual** |
+|---|---|
+| [📘 TypeScript Básico](./0-typescript.md) | **🏗️ Objects & Interfaces** |

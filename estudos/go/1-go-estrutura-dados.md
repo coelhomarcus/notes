@@ -236,3 +236,12 @@ func main() {
    foo([]int{1,2,3})
 }
 ```
+
+---
+
+## 📚 Navegação
+
+| **← Anterior** | **Atual** | **Próximo →** |
+|---|---|---|
+| [Go Básico](./0-go-start.md) | **Estruturas de Dados** | [Conceitos Avançados](./2-go-conceitos-av.md) |
+

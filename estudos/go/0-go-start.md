@@ -217,3 +217,11 @@ func main() {
 	}
 }
 ```
+
+---
+
+## 📚 Navegação
+
+| **Atual** | **Próximo →** |
+|---|---|
+| **Go Básico** | [Estruturas de Dados](./1-go-estrutura-dados.md) |
