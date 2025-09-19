@@ -1,6 +1,10 @@
 # Objetos e Interfaces
 
-### Classes em TypeScript
+> Guia completo sobre tipagem de objetos, classes e interfaces em TypeScript para desenvolvimento web.
+
+## `Classes` em `TypeScript`
+
+Classes em TypeScript permitem definir blueprints para objetos com propriedades tipadas e métodos. Elas oferecem uma estrutura orientada a objetos com verificação de tipos em tempo de compilação.
 
 ```ts
 class Product {
@@ -20,7 +24,9 @@ console.log(book instanceof Array); //false
 console.log(book instanceof Product); //true
 ```
 
-### instanceof
+## `instanceof`
+
+O operador `instanceof` verifica se um objeto foi criado a partir de uma classe específica, permitindo type guards e verificações de tipo em tempo de execução.
 
 ```ts
 console.log(book instanceof Array); //false
@@ -56,7 +62,9 @@ if (link instanceof HTMLAnchorElement) {
 }
 ```
 
-### Events & Callbacks
+## `Events & Callbacks`
+
+TypeScript oferece tipagem específica para eventos DOM, permitindo acesso seguro às propriedades de diferentes tipos de eventos (Mouse, Touch, Keyboard, etc.).
 
 ```ts
 const button = document.querySelector("button");
@@ -84,7 +92,9 @@ document.documentElement.addEventListener("touchstart", activeMenu);
 document.documentElement.addEventListener("pointerdown", activeMenu);
 ```
 
-### this (strict mode)
+## this (strict mode)
+
+No modo estrito, você pode tipar explicitamente o contexto `this` de uma função para garantir que ela seja chamada no elemento correto.
 
 ```ts
 function activeMenu(this: HTMLButtonElement, event: MouseEvent) {
@@ -95,7 +105,9 @@ const button = document.querySelector("button");
 button?.addEventListener("click", activeMenu);
 ```
 
-### target & currentTarget
+## `target & currentTarget`
+
+Diferenciação entre o elemento que disparou o evento (`target`) e o elemento que possui o event listener (`currentTarget`), com verificação de tipos segura.
 
 ```ts
 function activeMenu(event: Event) {
@@ -109,7 +121,9 @@ button?.addEventListener("click", activeMenu);
 window.addEventListener("keydown", activeMenu);
 ```
 
-### Genericos
+## `Genericos`
+
+Generics permitem criar componentes reutilizáveis que trabalham com diferentes tipos, mantendo a segurança de tipos. São como "parâmetros de tipo" para funções e classes.
 
 ```ts
 //Defininido que <Tipo> é um Generico
@@ -124,7 +138,9 @@ retorno(200).toFixed();
 // retorno<number>(a: number): number
 ```
 
-### Generic Extends
+## `Generic Extends`
+
+Restringe os tipos genéricos a subtipos específicos, garantindo que o tipo genérico tenha certas propriedades ou métodos disponíveis.
 
 ```ts
 function extractText<Tipo extends HTMLElement>(el: Tipo): string {
@@ -134,9 +150,11 @@ function extractText<Tipo extends HTMLElement>(el: Tipo): string {
 const link = document.querySelector("a");
 ```
 
-### Functions
+## `Functions`
 
-#### Void
+Tipagem avançada de funções em TypeScript, incluindo diferentes tipos de retorno e padrões de uso específicos.
+
+### `Void`
 
 ```ts
 //void por que a função não retorna nada
@@ -145,7 +163,9 @@ function noReturn(color: string): void {
 }
 ```
 
-#### Never
+### `Never`
+
+O tipo `never` representa funções que nunca retornam normalmente (sempre lançam erro ou entram em loop infinito).
 
 ```ts
 //Aborta o codigo se um erro acontecer, e para de rodar.
@@ -157,7 +177,9 @@ abort("Error");
 console.log("dont run");
 ```
 
-#### w/ Interface
+### `w/ Interface`
+
+Uso de interfaces para definir contratos de função, garantindo que objetos passados como parâmetros tenham a estrutura esperada.
 
 ```js
 interface Square {
@@ -179,7 +201,9 @@ const squareExample: Square = {
 console.log(calc(squareExample)); //4
 ```
 
-#### Overload
+### `Overload`
+
+Function overload permite definir múltiplas assinaturas para a mesma função, oferecendo diferentes tipos de entrada e saída baseados nos parâmetros.
 
 ```ts
 // Exemplo 1
@@ -197,7 +221,9 @@ normalizar(" Produto ");
 normalizar(["Banana ", " UVA"]);
 ```
 
-### TypeGuard, Safety e Narrowing
+## TypeGuard, Safety e Narrowing
+
+Type guards são funções que verificam tipos em tempo de execução, permitindo que o TypeScript "afunile" (narrow) tipos e ofereça melhor IntelliSense e segurança.
 
 ```ts
 function isString(value: unknown): value is string {
@@ -247,15 +273,19 @@ function handleProduto(data: unknown) {
 }
 ```
 
-#### Unknown
+### `Unknown`
+
+O tipo `unknown` é uma alternativa mais segura ao `any`, exigindo verificação de tipo antes do uso. É o tipo mais restritivo para valores desconhecidos.
 
 ```ts
 function test(data: unknown);
 ```
 
-#### Type Assertion
+### `Type Assertion`
 
-##### as
+Type assertion permite "forçar" um tipo quando você tem certeza do tipo real, mas o TypeScript não consegue inferir automaticamente.
+
+#### `as`
 
 ```ts
 const video = document.querySelector(".player") as HTMLVideoElement;
@@ -266,7 +296,7 @@ video.volume;
 const link = document.querySelector(".link") as string;
 ```
 
-##### as with function that return any
+#### `as with function that return any`
 
 ```ts
 interface Produto {
@@ -298,7 +328,9 @@ async function handleProduto2() {
 }
 ```
 
-### Destructuring
+## `Destructuring`
+
+Desestruturação com tipagem explícita permite extrair propriedades de objetos mantendo a segurança de tipos do TypeScript.
 
 ```ts
 const { body }: { body: HTMLElement } = document;
@@ -314,7 +346,9 @@ handleData({
 });
 ```
 
-### Rest
+## `Rest`
+
+O operador rest (`...`) permite capturar múltiplos argumentos em um array tipado, útil para funções com número variável de parâmetros.
 
 ```ts
 function comparar(tipo: "maior" | "menor", ...numeros: number[]) {
@@ -330,29 +364,88 @@ console.log(comparar("maior", 3, 2, 4, 30, 5, 6, 20));
 console.log(comparar("menor", 3, 2, 4, 1, 5, 6, 20));
 ```
 
-#### Intersection
+### `Intersection`
+
+Intersection types (`&`) combinam múltiplos tipos em um só, criando um tipo que possui todas as propriedades dos tipos combinados.
 
 ```ts
+// Definindo tipos separados para diferentes categorias
 type Produto = {
+  nome: string;
   preco: number;
+  categoria: string;
 };
 
-type Carro = {
+type Veiculo = {
+  marca: string;
+  ano: number;
   rodas: number;
-  portas: number;
 };
 
-function handleProdutoCarro(dados: Carro & Produto) {
-  dados.rodas;
-  dados.portas;
-  dados.preco;
+// Intersection: CarroProduto possui TODAS as propriedades de ambos os tipos
+type CarroProduto = Produto & Veiculo;
+
+// Função que aceita um objeto com propriedades de ambos os tipos
+function processarCarroParaVenda(item: CarroProduto) {
+  // Propriedades de Produto
+  console.log(`Produto: ${item.nome}`);
+  console.log(`Preço: R$ ${item.preco.toLocaleString()}`);
+  console.log(`Categoria: ${item.categoria}`);
+
+  // Propriedades de Veiculo
+  console.log(`Marca: ${item.marca}`);
+  console.log(`Ano: ${item.ano}`);
+  console.log(`Rodas: ${item.rodas}`);
+
+  return `${item.marca} ${item.nome} - ${item.ano} por R$ ${item.preco}`;
 }
 
-handleProdutoCarro({
-  preco: 20000,
-  rodas: 4,
-  portas: 5,
-});
+// Objeto deve ter TODAS as propriedades dos dois tipos
+const carroUsado: CarroProduto = {
+  // Propriedades de Produto
+  nome: "Civic",
+  preco: 85000,
+  categoria: "Sedan",
+
+  // Propriedades de Veiculo
+  marca: "Honda",
+  ano: 2020,
+  rodas: 4
+};
+
+processarCarroParaVenda(carroUsado);
+// Output: Honda Civic - 2020 por R$ 85000
 ```
 
-### Others: keyof, class, tuples.
+**Exemplo prático com múltiplas intersections:**
+
+```ts
+type Identificavel = {
+  id: string;
+  criadoEm: Date;
+};
+
+type Editavel = {
+  editadoEm?: Date;
+  editadoPor?: string;
+};
+
+type Usuario = {
+  nome: string;
+  email: string;
+};
+
+// Combinando múltiplos tipos
+type UsuarioCompleto = Usuario & Identificavel & Editavel;
+
+const usuario: UsuarioCompleto = {
+  id: "usr_123",
+  criadoEm: new Date(),
+  nome: "Marcus",
+  email: "marcus@email.com",
+  editadoEm: new Date(),
+  editadoPor: "admin"
+};
+```
+
+## Others: keyof, class, tuples.

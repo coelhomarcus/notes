@@ -1,6 +1,10 @@
-# Quick Revision
+# Typescript
 
-### Install
+> TypeScript é um superset do JavaScript que adiciona tipagem estática, oferecendo melhor IntelliSense, detecção de erros em tempo de compilação e código mais robusto.
+
+## Instalação e Configuração
+
+Configuração inicial do ambiente TypeScript para desenvolvimento.
 
 ```bash
 npm install -g typescript
@@ -18,10 +22,11 @@ tsc -w
 }
 ```
 
-### Type Annotations
+## `Type Annotations`
+
+Anotações de tipo explícitas que definem qual tipo de dado uma variável, parâmetro ou função deve aceitar. Na maioria dos casos, o TypeScript infere os tipos automaticamente.
 
 ```ts
-//Isso não é muito usado pq o tipo ja é declarado na inicialização automaticamente
 var username: string = "Marcus";
 username = 2; //error
 username = "Leda"; //✅
@@ -49,7 +54,9 @@ console.log(transformPrice(steed));
 //R$ 2000
 ```
 
-### Union Types
+## `Union Types`
+
+Permite que uma variável aceite múltiplos tipos usando o operador `|`. Útil quando um valor pode ser de diferentes tipos em diferentes situações.
 
 ```ts
 let total: string | number = 200;
@@ -66,15 +73,19 @@ function isNumber(value: number | number) {
 }
 ```
 
-### Operador Opcional
+## `Operador Opcional`
+
+O operador de encadeamento opcional (`?.`) permite acessar propriedades de objetos que podem ser `null` ou `undefined` sem causar erros.
 
 ```ts
 const button = document.querySelector("button");
-//Apenas executa se o button for diferente de NULL
+//Apenas executa se for diferente de NULL
 button?.click();
 ```
 
-### Type
+## `Type`
+
+Types permitem criar aliases para tipos complexos, facilitando reutilização e legibilidade do código. São mais flexíveis que interfaces para union types e primitivos.
 
 ```ts
 function example(data: { name: string; year: number }) {
@@ -82,6 +93,8 @@ function example(data: { name: string; year: number }) {
   console.log(data.year);
 }
 ```
+
+Agora utilizando `Type`:
 
 ```ts
 type Data = {
@@ -112,37 +125,118 @@ type Pessoa = { nome: string };
 type Usuario = Pessoa & { email: string };
 ```
 
-### Interface
+## `Interface`
+
+`Interfaces` definem a estrutura de objetos e são extensíveis, sendo ideais para contratos de API e estruturas complexas.
+
+### Básico
+
+Definição simples de interface para tipagem de objetos com propriedades obrigatórias.
 
 ```ts
-//Mais usados em objetos
-interface Data {
+interface User {
   name: string;
-  year: number;
+  age: number;
+  email: string;
 }
+
+const user: User = {
+  name: "Marcus",
+  age: 25,
+  email: "marcus@email.com"
+};
 ```
 
-### Array
+### Propriedades Opcionais
+
+Use `?` para tornar propriedades opcionais, permitindo objetos que não possuem todas as propriedades definidas.
 
 ```ts
-const numbers = [10, 30, 40, 5, 3, 30];
-
-function greaterThan10(data: number[]) {
-  return data.filter((n) => n > 10);
+interface Product {
+  id: number;
+  name: string;
+  price: number;
+  description?: string; // Opcional
+  inStock?: boolean;    // Opcional
 }
 
-greaterThan10(numbers);
+const product: Product = {
+  id: 1,
+  name: "Notebook",
+  price: 2500
+  // description e inStock são opcionais
+};
 ```
+
+### Propriedades Readonly
+
+Propriedades `readonly` não podem ser modificadas após a inicialização do objeto, garantindo imutabilidade de valores críticos.
 
 ```ts
-const arr = [10, "Coelho", 40, 5, "Marcus", 30];
-
-function onlyNumber(data: (string | number)[]) {
-  return data.filter((n) => typeof n === "number");
+interface Config {
+  readonly apiUrl: string;
+  readonly version: string;
+  timeout: number;
 }
 
-onlyNumber(arr);
+const config: Config = {
+  apiUrl: "https://api.example.com",
+  version: "1.0.0",
+  timeout: 5000
+};
+
+config.apiUrl = "nova-url"; // ❌ Erro! Propriedade readonly
+config.timeout = 3000; // ✅ OK
 ```
+
+### Extensão de Interfaces
+
+Interfaces podem herdar propriedades de outras interfaces usando `extends`, promovendo reutilização e hierarquia de tipos.
+
+```ts
+interface Animal {
+  name: string;
+  age: number;
+}
+
+interface Dog extends Animal {
+  breed: string;
+  bark(): void;
+}
+
+const dog: Dog = {
+  name: "Rex",
+  age: 3,
+  breed: "Labrador",
+  bark() {
+    console.log("Woof!");
+  }
+};
+```
+
+### Interfaces com Métodos
+
+Interfaces podem definir assinaturas de métodos, criando contratos para objetos que implementam comportamentos específicos.
+
+```ts
+interface Calculator {
+  add(a: number, b: number): number;
+  subtract(a: number, b: number): number;
+}
+
+const calc: Calculator = {
+  add(a, b) {
+    return a + b;
+  },
+  subtract(a, b) {
+    return a - b;
+  }
+};
+```
+
+### Interface com API
+
+Exemplo prático de interface para tipar dados recebidos de APIs, garantindo estrutura consistente dos dados externos.
 
 ```ts
 interface Curso {
@@ -162,7 +256,55 @@ async function fetchCursos() {
 }
 ```
 
-### Array - Sintaxe Alternativa
+### Interface vs Type
+
+Comparação entre interfaces (extensíveis, com merge automático) e types (mais flexíveis para unions e primitivos). Escolha baseada no caso de uso.
+
+```ts
+// ✅ Interface - Extensível
+interface Person {
+  name: string;
+}
+
+interface Person {
+  age: number; // Merge automático
+}
+
+// ✅ Type - Mais flexível
+type Status = "active" | "inactive";
+type ApiResponse<T> = {
+  data: T;
+  status: Status;
+};
+```
+
+## `Array`
+
+Tipagem de arrays permite definir que tipo de elementos o array pode conter, oferecendo verificação de tipos e IntelliSense para métodos específicos.
+
+```ts
+const numbers = [10, 30, 40, 5, 3, 30];
+
+function maiorQue10(data: number[]) {
+  return data.filter((n) => n > 10);
+}
+
+maiorQue10(numbers);
+```
+
+```ts
+const arr = [10, "Coelho", 40, 5, "Marcus", 30];
+
+function onlyNumber(data: (string | number)[]) {
+  return data.filter((n) => typeof n === "number");
+}
+
+onlyNumber(arr);
+```
+
+## Array - Sintaxe Alternativa
+
+Sintaxe genérica para tipagem de arrays usando `Array<Type>`. Funcionalmente equivalente à sintaxe `Type[]`, mas útil para tipos mais complexos.
 
 ```ts
 const numbers = [10, 30, 40, 5, 3, 30];
@@ -172,7 +314,9 @@ function greaterThan10(data: Array<number>) {
 }
 ```
 
-### Any
+## Any
+
+O tipo `any` desabilita a verificação de tipos, permitindo qualquer valor. Use com parcimônia pois elimina os benefícios do TypeScript. Prefira `unknown` quando possível.
 
 ```ts
 function normalize(text: any) {

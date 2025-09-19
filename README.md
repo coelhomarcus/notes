@@ -38,8 +38,7 @@
 | Tópico | Descrição |
 |--------|-----------|
 | [Fundamentos](./estudos/typescript/typescript.md) | Tipos básicos e configuração |
-| [Objects & Interfaces](./estudos/typescript/objects_interfaces.md) | Definição de contratos |
-| [Exemplos Práticos - Interfaces](./estudos/typescript/example_interfaces.md) | Exemplos |
+| [Objects & Interfaces](./estudos/typescript/objects_interfaces.md) | Mais sobre Tipagem |
 
 ###
 
