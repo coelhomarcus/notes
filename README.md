@@ -49,30 +49,14 @@
 |--------|-----------|
 | [Fundamentos](./estudos/tailwind/tailwind.md) | Classes utilitárias e configuração |
 
-### 🟢 Node.js
+### 🟢 Node.js + API
 
 | Tópico | Descrição |
 |--------|-----------|
 | [Fundamentos](./estudos/nodejs/nodejs.md) | `Event loop`, `módulos` e `npm` |
 | [Express.js](./estudos/nodejs/expressjs.md) | Framework web para `Node.js` |
+| [PostgreSQL Básico](./estudos/nodejs/postgresql.md) | `Queries`, `joins`... |
 | [Express + PostgreSQL](./estudos/nodejs/express-postgres.md) | Integração completa |
 
 ###
-
-### 🌐 API Express
-
-| Tópico | Descrição |
-|--------|-----------|
-| [Conceitos](./estudos/api-express/api.md) | `REST` e boas práticas |
-| [Implementação](./estudos/api-express/criandoapi.md) | Criando `APIs` com `Express` |
-
-###
-
-### 🐘 PostgreSQL
-
-| Tópico | Descrição |
-|--------|-----------|
-| [SQL Básico](./estudos/postgres/postgresql.md) | `Queries`, `joins` e `transações` |
-| [Integração com Express](./estudos/nodejs/express-postgres.md) |`Bcrypt` e autenticação |
-
 
