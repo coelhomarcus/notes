@@ -1,6 +1,10 @@
-# Revisão Geral
+# React - Fundamentos
 
-Um componente React sempre retorna apenas `1` elemento
+> Biblioteca JavaScript para construção de interfaces de usuário baseada em componentes reutilizáveis e estado reativo.
+
+## Estrutura de Componentes
+
+Um componente React sempre retorna apenas `1` elemento ou fragmento, mantendo uma estrutura hierárquica clara e previsível.
 
 ```jsx
 const ButtonBuy = () => {
@@ -21,7 +25,9 @@ const App = () => {
 // <></> significa <React.Fragment></React.Fragment>
 ```
 
-As tags `html` no `JSX` tem os atributos em `camelCase` e as vezes tem alterações no nome tambem pois ja existem equivalentes no javascript por exemplo, `class` virou `className`
+### JSX - Sintaxe e Atributos
+
+JSX (JavaScript XML) permite escrever HTML dentro do JavaScript. Atributos seguem camelCase e alguns nomes mudam para evitar conflitos com palavras reservadas do JavaScript.
 
 ```jsx
 const App = () => {
@@ -34,7 +40,9 @@ const App = () => {
 };
 ```
 
-## `Expressões` e `Variaveis`
+## `Expressões` e `Variáveis`
+
+JSX permite inserir expressões JavaScript usando chaves `{}`, possibilitando rendering dinâmico de conteúdo baseado em variáveis, funções e operadores.
 
 ```jsx
 const App = () => {
@@ -51,7 +59,9 @@ const App = () => {
 };
 ```
 
-## `Array`
+## `Arrays` e Renderização de Listas
+
+Rendering de listas usando `map()` para transformar arrays de dados em elementos JSX. Cada item deve ter uma `key` única para otimização do React.
 
 ```jsx
 const App = () => {
@@ -67,7 +77,9 @@ const App = () => {
 };
 ```
 
-## `Componentes`
+## `Componentes` e Props
+
+Componentes são funções que retornam JSX e podem receber dados através de `props`. Permitem reutilização de código e composição de interfaces complexas.
 
 ```jsx
 import Header from "./Header/Header"
@@ -82,7 +94,9 @@ const App = () => {
 };
 ```
 
-Um componente pode receber um `props`
+### Props - Passagem de Dados
+
+Props são argumentos passados para componentes, permitindo personalização e comunicação entre componentes pai e filho. São imutáveis dentro do componente.
 
 ```jsx
 //App.jsx
@@ -108,7 +122,9 @@ const Button = ({ myProp }) => {
 };
 ```
 
-`{children}` do Componente
+### `{children}` - Composição de Componentes
+
+A prop especial `children` permite que componentes envolvam outros elementos, criando layouts flexíveis e componentes reutilizáveis como containers.
 
 ```jsx
 //App.jsx
@@ -125,5 +141,10 @@ const App = () => {
 //Button.jsx
 const Button = (props) => {
   return <button>{props.children}</button>;
+};
+
+//Desestruturação com children
+const Button = ({ children }) => {
+  return <button>{children}</button>;
 };
 ```

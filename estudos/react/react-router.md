@@ -1,12 +1,16 @@
 # React Router
 
-Instalação:
+> Biblioteca para roteamento client-side em aplicações React, permitindo navegação entre páginas sem recarregar a página.
+
+## Instalação
 
 ```bash
 npm install react-router
 ```
 
 ### `BrowserRouter`
+
+Componente raiz que habilita o roteamento na aplicação. Deve envolver toda a aplicação para permitir navegação entre rotas.
 
 ```jsx
 //main.jsx
@@ -25,6 +29,8 @@ ReactDOM.createRoot(root).render(
 ```
 
 ### `Routes & Route`
+
+Define as rotas da aplicação. `Routes` agrupa múltiplas `Route`, cada uma associando um caminho (path) a um componente.
 
 ```jsx
 //App.jsx
@@ -45,6 +51,8 @@ const App = () => {
 
 ### `Link`
 
+Substitui as tags `<a>` para navegação interna. Evita o reload da página e mantém o estado da aplicação.
+
 ```jsx
 import React from "react";
 import { Routes, Route } from "react-router";
@@ -62,7 +70,7 @@ const Header = () => {
 
 ### `NavLink`
 
-A diferença entre `link` e `navlink` é que o `navlink` adiciona a `classe active` no que esta selecionado no momento.
+Versão especial do `Link` que adiciona automaticamente a classe `active` no link da página atual. Ideal para menus de navegação.
 
 ```jsx
 import React from "react";
@@ -87,9 +95,7 @@ const Header = () => {
 
 ### `useNavigate`
 
-O `useNavigate` é um hook do React Router usado para navegar programaticamente entre rotas.
-
-Nesse exemplo, simulamos um login e o usuário seria redirecionado para a página `/about`.
+Hook para navegação programática (via JavaScript). Útil para redirecionamentos após ações como login, cadastro ou validações.
 
 ```jsx
 import { useNavigate } from "react-router";
@@ -111,6 +117,8 @@ const Login = () => {
 ```
 
 ### `useParams`
+
+Hook que extrai parâmetros dinâmicos da URL (como IDs). Permite criar rotas dinâmicas para páginas de detalhes.
 
 ```jsx
 //App.jsx

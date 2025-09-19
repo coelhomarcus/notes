@@ -77,6 +77,8 @@ const App = () => {
 
 ### **useRef**
 
+Hook para referenciar elementos DOM diretamente ou armazenar valores mutáveis que não causam re-renderização quando alterados.
+
 ```jsx
 const App = () => {
   //Usado para referenciar um elemento
@@ -107,7 +109,7 @@ function handleClick() {
 
 ### **useContext**
 
-`useContext` será usado para mandar `variáveis`, `funções` ou `outros tipos de dados` para seus `componentes filhos`.
+Hook que permite compartilhar dados entre componentes sem prop drilling. Consome valores de um Context Provider.
 
 ```jsx
 //App.jsx
@@ -158,7 +160,7 @@ export default Product;
 
 ### **Custom Hooks**
 
-Um Custom Hook sempre começará com 'use'. Exemplo `useCustomHook.jsx`.
+Funções que encapsulam lógica de hooks reutilizável. Sempre começam com "use" e permitem compartilhar lógica entre componentes.
 
 ```jsx
 import React from "react";
@@ -214,7 +216,9 @@ const App = () => {
 export default App;
 ```
 
-### **Outros React Rooks**
+### **Outros React Hooks**
 
-- **`useMemo`**
-- **`useCallback` (importante para Custom Hooks)**
+Hooks adicionais para otimização de performance e casos específicos:
+
+- **`useMemo`** - Memoriza resultados de cálculos complexos para evitar recálculos desnecessários
+- **`useCallback`** - Memoriza funções para evitar recriações e otimizar performance de componentes filhos
