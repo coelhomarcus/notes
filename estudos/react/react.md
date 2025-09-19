@@ -1,6 +1,6 @@
-# Revisão
+# Revisão Geral
 
-###### Um componente sempre retorna apenas 1 elemento
+Um componente React sempre retorna apenas `1` elemento
 
 ```jsx
 const ButtonBuy = () => {
@@ -18,13 +18,12 @@ const App = () => {
   );
 };
 
-// <></> means <React.Fragment></React.Fragment>
+// <></> significa <React.Fragment></React.Fragment>
 ```
 
-###### As tags html no JSX tem os atributos em camelCase
+As tags `html` no `JSX` tem os atributos em `camelCase` e as vezes tem alterações no nome tambem pois ja existem equivalentes no javascript por exemplo, `class` virou `className`
 
 ```jsx
-//Attributes examples
 const App = () => {
   return (
 	  <div className="content">1</div>
@@ -35,16 +34,16 @@ const App = () => {
 };
 ```
 
-###### Expressões e Variaveis
+## `Expressões` e `Variaveis`
 
 ```jsx
 const App = () => {
   const name = "Marcus";
   return <p>{name}</p>;
 };
-
-//Another example
-
+```
+Outro exemplo:
+```jsx
 const active = true;
 
 const App = () => {
@@ -52,7 +51,7 @@ const App = () => {
 };
 ```
 
-###### **Array**
+## `Array`
 
 ```jsx
 const App = () => {
@@ -68,7 +67,7 @@ const App = () => {
 };
 ```
 
-###### Componentes
+## `Componentes`
 
 ```jsx
 import Header from "./Header/Header"
@@ -83,9 +82,10 @@ const App = () => {
 };
 ```
 
-###### Um componente pode receber um props
+Um componente pode receber um `props`
 
 ```jsx
+//App.jsx
 import Button from "./Button/Button";
 
 const App = () => {
@@ -94,30 +94,35 @@ const App = () => {
     //<button>Hello</button>
   );
 };
+```
+
+```jsx
+//Button.jsx
+const Button = (props) => {
+  return <button>{props.myProp}</button>;
+};
 
 //Button.jsx com desestruturação
 const Button = ({ myProp }) => {
   return <button>{myProp}</button>;
 };
-
-//Button.jsx sem desestruturação
-const Button = (props) => {
-  return <button>{props.myProp}</button>;
-};
 ```
 
-###### {children} do Componente
+`{children}` do Componente
 
 ```jsx
+//App.jsx
 import Button from "./Button/Button";
 
 const App = () => {
   return (
     <Button>My Button</Button>
-    //"My Button" é fo {children} do button
+    //"My Button" é o {children} do button
   );
 };
-
+```
+```jsx
+//Button.jsx
 const Button = (props) => {
   return <button>{props.children}</button>;
 };
