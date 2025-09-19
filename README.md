@@ -26,10 +26,10 @@
 
 | Tópico | Descrição |
 |--------|-----------|
-| [Fundamentos](./estudos/react/react.md) | `Componentes`, `props` e `state` |
-| [Hooks](./estudos/react/react-hooks.md) | `useState`, `useEffect` e `hooks` customizados |
-| [React Router](./estudos/react/react-router.md) | Navegação entre páginas |
-| [Estilização](./estudos/react/react-css.md) | `CSS modules`, `styled-components` |
+| [Fundamentos](./estudos/react/0-react.md) | `Componentes`, `props` e `state` |
+| [Hooks](./estudos/react/1-react-hooks.md) | `useState`, `useEffect` e `hooks` customizados |
+| [Estilização](./estudos/react/2-react-css.md) | `CSS modules`, `styled-components` |
+| [React Router](./estudos/react/3-react-router.md) | Navegação entre páginas |
 
 ###
 

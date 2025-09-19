@@ -34,3 +34,9 @@ const App = () => {
   );
 };
 ```
+
+## 📚 Navegação
+
+| **← Anterior** | **Atual** | **Próximo →** |
+|---|---|---|
+| [React Hooks](./1-react-hooks.md) | **React Estilização** | [React Router](./3-react-router.md) |

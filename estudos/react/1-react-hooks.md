@@ -222,3 +222,11 @@ Hooks adicionais para otimização de performance e casos específicos:
 
 - **`useMemo`** - Memoriza resultados de cálculos complexos para evitar recálculos desnecessários
 - **`useCallback`** - Memoriza funções para evitar recriações e otimizar performance de componentes filhos
+
+---
+
+## 📚 Navegação
+
+| **← Anterior** | **Atual** | **Próximo →** |
+|---|---|---|
+| [React Básico](./0-react.md) | **React Hooks** | [React Estilização](./2-react-css.md) |
