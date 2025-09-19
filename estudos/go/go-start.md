@@ -1,6 +1,6 @@
-## Básicos da Linguagem
+# Básicos da Linguagem
 
-### Go CLI
+## `Go CLI`
 
 -   `go mod init NomePasta` - Criando go.mod
 -   `go run main.go` - Compila e executa o projeto
@@ -12,7 +12,7 @@
 
 ## Tipos de Dados e Variáveis
 
-### Variavéis
+## `Variavéis`
 
 Em Go, nomes que começam com letra maiúscula são exportados (públicos) e podem ser acessados fora do pacote.
 
@@ -52,9 +52,9 @@ var x int = 10
 var y float64 = float64(x)
 ```
 
-## Funções
+# Funções
 
-### Funções Básicas
+## `Funções Básicas`
 
 ```go
 //Criando uma função que retorna string:
@@ -88,7 +88,7 @@ func main() {
 }
 ```
 
-### Função Higher Order
+## `Função Higher Order`
 
 ```go
 func main() {
@@ -104,7 +104,7 @@ func somar(a int) func(int) int {
 }
 ```
 
-### Função Variática
+## `Função Variática`
 
 ```go
 // Função variática: aceita 1 ou mais argumentos
@@ -119,9 +119,9 @@ func somarVariatica(nums ...int) int {
 ```
 
 
-## Controle de Fluxo
+# Controle de Fluxo
 
-### Condicionais
+## `Condicionais`
 
 As condicionais em Go são feitas com `if`, `else if`, `else` e `switch`.
 Não tem diferencia entre else if e switch em termos de performance, então use o que fizer mais sentido pro seu caso.
@@ -177,7 +177,7 @@ func main() {
 
 ```
 
-### Loops
+## `Loops`
 
 Os Loops em Go são feitos com a palavra-chave `for`. Não existe while ou do while, mas podemos usar o for de forma que ele funcione como esses outros tipos de loop.
 

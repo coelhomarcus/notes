@@ -1,6 +1,6 @@
-## Errors
+# Errors
 
-#### Tratamento de Erros Básico
+## Tratamento de `Erros` Básico
 
 Em Go, erros são representados por interfaces do tipo error. O tratamento de erros é explícito e faz parte do fluxo do programa.
 
@@ -35,7 +35,7 @@ func dividir(a, b int) (int, error) {
 }
 ```
 
-#### Errors Is e Errors As
+## `Errors Is` e `Errors As`
 
 ```go
 import (
@@ -74,7 +74,7 @@ func main() {
 }
 ```
 
-#### Errors Join
+## `Errors Join`
 
 ```go
 func main() {
@@ -94,7 +94,7 @@ func main() {
 }
 ```
 
-#### Errors Wrappers
+## `Errors Wrappers`
 
 ```go
 func dividir(a, b int) (int, error) {

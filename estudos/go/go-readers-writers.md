@@ -1,4 +1,4 @@
-## Readers & Writers
+## `Readers & Writers`
 
 O padrão Reader/Writer é muito comum em Go.
 

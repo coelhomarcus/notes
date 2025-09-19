@@ -1,6 +1,6 @@
-## Conceitos Avançados
+# Conceitos Avançados
 
-### Defer
+## `Defer`
 
 A palavra-chave `defer` adia a execução de uma função até que a função que a contém retorne. Ou seja, o código marcado com `defer` só será executado no final, mesmo que esteja no meio da função.
 
@@ -17,7 +17,7 @@ func defer() {
 }
 ```
 
-### Ponteiros
+## `Ponteiros`
 
 Os ponteiros são uma maneira de referenciar a localização de uma variável na memória, ao invés de seu valor. Isso é útil quando queremos modificar o valor original de uma variável dentro de uma função.
 

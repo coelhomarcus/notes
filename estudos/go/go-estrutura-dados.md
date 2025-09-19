@@ -1,6 +1,6 @@
-## Estruturas de Dados
+# Estruturas de Dados
 
-### Arrays
+## `Arrays`
 
 Arrays tem tamanho fixo, nunca podem crescer ou diminuir
 
@@ -11,7 +11,7 @@ arr3 := [5]int{3: 10} // inicializa o indice 3 com valor 10
 arr4 := [10]int{3: 10, 6: 20} // inicializa os indices 3 e 6 com valores 10 e 20
 ```
 
-### Slices
+## `Slices`
 
 Uma Slice é uma versão dinâmica de um Array.
 
@@ -55,7 +55,7 @@ slicePerformatico := make([]string, 0, 10)
 fmt.Println(slicePerformatico, len(slicePerformatico), cap(slicePerformatico))
 ```
 
-### Map
+## `Map`
 
 O Map em GO basicamente é o HashMap Padrão - Chave e Valor.
 
@@ -93,7 +93,7 @@ func main() {
 }
 ```
 
-### Structs
+## `Structs`
 
 Em Go, `structs` são semelhantes a classes e são declaradas com a keyword `type`. Cada campo é definido em uma nova linha. Métodos são funções que recebem um receiver parameter, permitindo que sejam associados a um tipo específico. Também é possível usar embed para incorporar um tipo dentro de outro. Struct tags permitem controlar o comportamento de serialização, por exemplo, para JSON.
 
@@ -139,7 +139,7 @@ func main() {
 }
 ```
 
-### Interfaces
+## `Interfaces`
 
 `Interfaces` em Go permitem definir comportamentos que diferentes tipos podem implementar.
 
@@ -169,7 +169,7 @@ func main() {
 	whatDoesThisAnimalSay(dog)
 }
 ```
-#### Type Assertion e Type Switch
+## `Type Assertion` e `Type Switch`
 
 Interfaces permitem que diferentes tipos sejam tratados de forma genérica.
 
@@ -219,7 +219,7 @@ func main() {
 
 
 
-#### Any
+## `Any`
 
 O tipo `any` é apenas um alias (apelido) para `interface{}`. Ou seja, type `any = interface{}` está definido no pacote padrão.
 
