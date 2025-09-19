@@ -1,19 +1,22 @@
-# [React Router](https://reactrouter.com/)
+# React Router
+
+Instalação:
 
 ```bash
 npm install react-router
 ```
 
-### **main.jsx - BrowserRouter**
+### `BrowserRouter`
 
 ```jsx
+//main.jsx
 import React from "react";
 import { BrowserRouter } from "react-router";
 import App from "./app";
 
 const root = document.getElementById("root");
 
-//usar aqui
+//BrowserRouter usado aqui
 ReactDOM.createRoot(root).render(
   <BrowserRouter>
     <App />
@@ -21,9 +24,10 @@ ReactDOM.createRoot(root).render(
 );
 ```
 
-### **App.jsx - Routes, Route**
+### `Routes & Route`
 
 ```jsx
+//App.jsx
 import React from "react";
 import { Routes, Route } from "react-router";
 
@@ -39,7 +43,7 @@ const App = () => {
 };
 ```
 
-### **Link**
+### `Link`
 
 ```jsx
 import React from "react";
@@ -56,13 +60,14 @@ const Header = () => {
 };
 ```
 
-### **NavLink**
+### `NavLink`
+
+A diferença entre `link` e `navlink` é que o `navlink` adiciona a `classe active` no que esta selecionado no momento.
 
 ```jsx
 import React from "react";
 import { Routes, Route } from "react-router";
 
-//A diferença entre link e navlink é que o navlink adiciona a classe active no que esta selecionado agora
 const Header = () => {
   return (
     <nav>
@@ -80,7 +85,11 @@ const Header = () => {
 };
 ```
 
-### **useNavigate**
+### `useNavigate`
+
+O `useNavigate` é um hook do React Router usado para navegar programaticamente entre rotas.
+
+Nesse exemplo, simulamos um login e o usuário seria redirecionado para a página `/about`.
 
 ```jsx
 import { useNavigate } from "react-router";
@@ -101,20 +110,23 @@ const Login = () => {
 };
 ```
 
-### **useParams**
+### `useParams`
 
 ```jsx
+//App.jsx
 import { Routes, Route } from 'react-router';
 
 const App = () => {
   return (
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="produto/:id" element={<Produto />} /> //parameter id <-
+        <Route path="produto/:id" element={<Produto />} />
       </Routes>
   );
 };
+```
 
+```jsx
 //Product.jsx
 import { useParams } from 'react-router';
 
@@ -129,20 +141,6 @@ const Product = () => {
 };
 ```
 
-### outras coisas: **useLocation, Nested Routes**
+Outros Conceitos: `useLocation`, `Nested Routes`
 
-#### Extra
-
-```jsx
-//muda o head do html
-const Head = (props) => {
-  React.useEffect(() => {
-    document.title = props.title;
-    document
-      .querySelector("meta[name='description']")
-      .setAttribute("content", props.description);
-  }, [props]);
-
-  return <></>;
-};
-```
+Documentação: https://reactrouter.com/
