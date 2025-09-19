@@ -1,14 +1,17 @@
 # React Hooks
 
-Não use hooks dentro de funções, loops ou condicionais.
-Hooks só devem ser usado usados dentro de funções se forem Custom Hooks.
+Não use hooks dentro de `funções`, `loops` ou `condicionais`.
+
+`Hooks` só devem ser usado usados dentro de `funções` se forem `Custom Hooks`.
 
 ### **useState**
 
+Utilizamos o `useState` para informar ao React quando uma variável é alterada, de modo que ele possa re-renderizar o componente e atualizar o estado.
+
 ```jsx
 const App = () => {
-  //useState(0)
-  //0 é o valor inicial do contador
+  //React.useState(0)
+  //0 é o valor inicial do state count
   const [count, setCount] = React.useState(0);
 
   function handleClick() {
@@ -20,6 +23,10 @@ const App = () => {
 ```
 
 ### **useEffect**
+
+Utilizamos o `useEffect` para executar `efeitos colaterais` em um componente, como buscar dados ou reagir a mudanças no estado, sempre que determinadas dependências forem atualizadas.
+
+Por exemplo sempre que o estado do contador (`count`) mudar, ele da um `console.log()`
 
 ```jsx
 const App = () => {
@@ -37,6 +44,8 @@ const App = () => {
 };
 ```
 
+Quando passamos um `array vazio` como dependência no `useEffect`, a função é executada apenas uma vez, logo após a primeira renderização do componente.
+
 ```jsx
 const App = () => {
   React.useEffect(() => {
@@ -46,6 +55,8 @@ const App = () => {
   return <div>hello</div>;
 };
 ```
+
+Por exemplo o `useEffect` é utilizado para criar um `eventListener` no scroll, então assim que o componente for rederizado o scroll tera esse evento adicionado.
 
 ```jsx
 const App = () => {
@@ -96,7 +107,7 @@ function handleClick() {
 
 ### **useContext**
 
-useContext será usado para mandar variavels, funções ou outros tipos de dados para seus componentes filhos.
+`useContext` será usado para mandar `variáveis`, `funções` ou `outros tipos de dados` para seus `componentes filhos`.
 
 ```jsx
 //App.jsx
@@ -205,5 +216,5 @@ export default App;
 
 ### **Outros React Rooks**
 
-- **useMemo**
-- **useCallback (importante para Custom Hooks)**
+- **`useMemo`**
+- **`useCallback` (importante para Custom Hooks)**

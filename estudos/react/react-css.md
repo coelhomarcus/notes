@@ -1,26 +1,29 @@
-# React CSS
+# Estilização em React
 
-### Jeito padrão - importando o .css
+### Importando o `.css` padrão
+
+Importamos normalmente `import "./App.css";` e assim ja conseguimos acessar todas as classes dentro de `App.css` por exemplo a classe `container`.
 
 ```jsx
 import "./App.css";
 
-//className="container" -> a classe container esta dentro do App.css que importamos
 const App = () => {
   return (
     <div className="container">
-      <p className="text">Meu site</p>
+      <p>Meu site</p>
     </div>
   );
 };
 ```
 
-### CSS Modules -> aqui as classes são em camelCase e são unicas
+### CSS Modules
+
+Em `CSS Modules` as `classes` são em `camelCase` e unicas.
+
+No exemplo abaixo importamos os estilos de `Produto.module.css` que tem duas classes `.title` e `.price`, para acessa-las usamos o `styles` que importamos e acessamos as classes que agora viram propriedades `styles.title` e `styles.price`
 
 ```jsx
 import styles from "./Produto.module.css";
-
-//styles.title é a classe .title no Produto.module.css
 
 const App = () => {
   return (
