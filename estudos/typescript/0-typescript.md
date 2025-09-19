@@ -326,11 +326,3 @@ function normalize(text: any) {
 normalize(" DeSIGN");
 normalize(200); //erro no runtime
 ```
-
----
-
-## 📚 Navegação
-
-| **Atual** | **Próximo →** |
-|---|---|
-| **📘 TypeScript Básico** | [🏗️ Objects & Interfaces](./1-objects-interfaces.md) |

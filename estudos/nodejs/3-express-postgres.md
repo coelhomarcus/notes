@@ -119,11 +119,3 @@ bcrypt(senhaINPUT, senhaHASH, (err, result) => {
   }
 });
 ```
-
----
-
-## 📚 Navegação
-
-| **← Anterior** | **Atual** |
-|---|---|
-| [PostgreSQL](./2-postgresql.md) | **Express + PostgreSQL** |
