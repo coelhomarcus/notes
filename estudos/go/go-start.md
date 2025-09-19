@@ -34,7 +34,7 @@ func main() {
 }
 ```
 
-Em Go não existe undefined ou null como em outras linguagens. Se você não inicializar a variável, ela virá com um **zero value** dependendo do tipo: `string: ""` `int: 0` `float: 0` `boolean: false`
+Em Go não existe undefined como em outras linguagens. Se você não inicializar a variável, ela virá com um **zero value** dependendo do tipo: `string: ""` `int: 0` `float: 0` `boolean: false`
 
 Tipos em Go:
 
