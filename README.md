@@ -47,7 +47,7 @@
 
 | Tópico | Descrição |
 |--------|-----------|
-| [Fundamentos](./estudos/tailwind/tailwind.md) | Classes utilitárias e configuração |
+| [Revisão Simples](./estudos/tailwind/tailwind.md) | Classes utilitárias e Modificadores |
 
 ### 🟢 Node.js + API
 
