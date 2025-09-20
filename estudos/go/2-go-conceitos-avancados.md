@@ -194,3 +194,179 @@ func defer() {
 	// defer 1
 }
 ```
+
+## `Goroutines` & `Context`
+
+### Conceitos Fundamentais
+
+**Paralelismo**: Executar múltiplas tarefas simultaneamente em núcleos diferentes do processador.
+
+**Concorrência**: Gerenciar múltiplas tarefas ao mesmo tempo, mas não necessariamente executando simultaneamente. É como o exemplo do caixa do mercado: enquanto uma pessoa tem problemas no atendimento, outras pessoas podem ser atendidas em outros caixas, evitando que todos esperem.
+
+### Execução Sequencial vs Concorrente
+
+#### Exemplo Sequencial (sem concorrência)
+
+Neste código fazemos 10 requisições HTTP uma após a outra. Cada requisição precisa terminar completamente antes da próxima começar, tornando o processo lento.
+
+```go
+package main
+
+import (
+	"fmt"
+	"net/http"
+	"time"
+)
+
+func main() {
+	start := time.Now()
+	for range 10 {
+		resp, err := http.Get("https://google.com")
+		if err != nil {
+			panic(err)
+		}
+		defer resp.Body.Close()
+		fmt.Println("ok")
+	}
+	fmt.Println(time.Since(start))
+}
+```
+
+#### Exemplo Concorrente com `WaitGroup`
+
+Com concorrência podemos fazer várias requisições sem esperar que a anterior termine. Usamos `WaitGroup` para sincronizar goroutines assíncronas.
+
+```go
+func main() {
+	start := time.Now()
+	const n = 10
+
+	var wg sync.WaitGroup
+	wg.Add(n) // Dizemos que o WaitGroup vai esperar 10 sinais
+
+	// Dentro do loop, cada defer wg.Done() será executado ao final
+	// da goroutine, enviando um sinal de conclusão
+	// O wg.Wait() no final trava o código até que todos os sinais sejam recebidos
+
+	for range n {
+		go func() {
+			defer wg.Done()
+			resp, err := http.Get("https://google.com")
+			if err != nil {
+				panic(err)
+			}
+			defer resp.Body.Close()
+			fmt.Println("ok")
+		}()
+	}
+	wg.Wait()
+	fmt.Println(time.Since(start))
+}
+```
+
+## Quando Usar Concorrência?
+
+**Pergunta-chave**: "Este código tem muita espera?" Se sim, provavelmente se beneficiará de concorrência.
+
+Exemplos de operações com espera:
+- Requisições HTTP
+- Operações de I/O (leitura/escrita de arquivos)
+- Consultas ao banco de dados
+- Operações de rede
+
+**Dica importante**: Use benchmarks para verificar se a concorrência realmente melhora a performance. Nem sempre vale a pena a complexidade adicional.
+
+## O que é Context?
+
+O `Context` é um mecanismo do Go para controlar o ciclo de vida de operações, permitindo:
+- **Cancelamento**: Interromper operações em andamento
+- **Timeout**: Definir tempo limite para operações
+- **Deadlines**: Estabelecer quando uma operação deve terminar
+- **Valores**: Passar dados entre funções (menos comum)
+
+### Context para Timeout
+
+```go
+package main
+
+import (
+	"context"
+	"errors"
+	"fmt"
+	"net/http"
+	"net/http/httptest"
+	"sync"
+	"time"
+)
+
+func main() {
+	start := time.Now()
+	const n = 10
+
+	var wg sync.WaitGroup
+	wg.Add(n)
+
+	// 1. CRIANDO O CONTEXT COM TIMEOUT
+	ctx := context.Background()              // Context raiz (vazio)
+	ctx, cancel := context.WithTimeout(ctx, 5*time.Second) // Timeout de 5 segundos
+	defer cancel() // Importante: sempre chamar cancel() para liberar recursos
+
+	// 2. SERVIDOR DE TESTE (simula servidor lento)
+	// httptest.NewServer cria um servidor HTTP temporário para testes
+	server := httptest.NewServer(
+		http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
+			// Simula processamento lento (10 segundos)
+			// Este delay é maior que nosso timeout (5 segundos)
+			time.Sleep(10 * time.Second)
+			fmt.Fprintln(w, "hello, world")
+		}),
+	)
+
+	for range n {
+		go func(ctx context.Context) {
+			defer wg.Done()
+
+			// 3. CRIANDO REQUISIÇÃO COM CONTEXT
+			// NewRequestWithContext associa o context à requisição
+			// Se o context expirar, a requisição será cancelada automaticamente
+			req, err := http.NewRequestWithContext(
+				ctx,        // Context com timeout
+				"GET",      // Método HTTP
+				server.URL, // URL do servidor de teste
+				nil,        // Body (nil para GET)
+			)
+			if err != nil {
+				panic(err)
+			}
+
+			// 4. EXECUTANDO A REQUISIÇÃO
+			// DefaultClient.Do() executa a requisição respeitando o context
+			resp, err := http.DefaultClient.Do(req)
+			if err != nil {
+				// 5. TRATAMENTO ESPECÍFICO DE TIMEOUT
+				if errors.Is(err, context.DeadlineExceeded) {
+					fmt.Println("timeout - requisição cancelada após 5s")
+					return
+				}
+				panic(err)
+			}
+			defer resp.Body.Close()
+			fmt.Println("ok - requisição completada")
+		}(ctx) // Passando o context para a goroutine
+	}
+	wg.Wait()
+	fmt.Println("Tempo total:", time.Since(start))
+	// Saída esperada: ~5 segundos (tempo do timeout)
+	// Sem timeout seria: ~10 segundos (tempo do servidor lento)
+}
+```
+
+#### Por que usar Context em HTTP?
+
+Requisições HTTP podem ser lentas ou travar completamente. Sem timeout, sua aplicação pode:
+- Esperar indefinidamente por uma resposta
+- Consumir recursos desnecessariamente
+- Criar uma má experiência do usuário
+- Sobrecarregar o sistema com conexões pendentes
+
+---
