@@ -1,9 +1,9 @@
-### `Notes`
+# `Notes`
 
 ![Go](https://img.shields.io/badge/Go-00ADD8?style=plastic&logo=go&logoColor=white)
 ![React](https://img.shields.io/badge/React-3178C6?style=plastic&logo=react&logoColor=white)
 ![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=plastic&logo=typescript&logoColor=white)
-![Tailwind](https://img.shields.io/badge/Tailwind-CSS-06B6D4?style=plastic&logo=tailwindcss&logoColor=white)
+![Tailwind](https://img.shields.io/badge/Tailwind-06B6D4?style=plastic&logo=tailwindcss&logoColor=white)
 ![PostgreSQL](https://img.shields.io/badge/PostgreSQL-336791?style=plastic&logo=postgresql&logoColor=white)
 ![Node.js](https://img.shields.io/badge/Node.js-339933?style=plastic&logo=node.js&logoColor=white)
 ![APIs REST](https://img.shields.io/badge/API-Express-339933?style=plastic)
@@ -16,7 +16,7 @@
 |--------|-----------|
 | [Inicio](./estudos/go/0-go-start.md) | Primeiros passos e sintaxe básica |
 | [Estruturas de Dados](./estudos/go/1-go-estrutura-dados.md) | `Arrays`, `slices`, `maps`, `structs`... |
-| [Conceitos Avançados](./estudos/go/2-go-conceitos-av.md) | `Goroutines`, `channels` e mais |
+| [Conceitos Avançados](./estudos/go/2-go-conceitos-avancados.md) | `Generics`, `Defer` e mais |
 | [Tratamento de Erros](./estudos/go/3-go-errors.md) | Padrões de erro em `Go` |
 | [Readers & Writers](./estudos/go/4-go-readers-writers.md) | `Interfaces` de `IO` |
 
