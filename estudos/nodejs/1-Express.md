@@ -135,6 +135,97 @@ app.listen(3000, () => {
 });
 ```
 
+## Refatorando Rotas
+
+`Antes`
+```js
+import express from "express";
+
+const app = express();
+
+app.get("/api/products", (req, res) => {
+    res.json({ data: "products" });
+});
+
+app.get("/api/services", (req, res) => {
+    res.json({ data: "service" });
+});
+
+app.listen(8000, () => console.log("listening 8000"));
+```
+
+`Depois`
+```js
+import express from "express";
+
+const app = express();
+
+const apiRouter = express.Router();
+
+const productsController = (req, res) => {
+    res.json({ data: "products" });
+};
+
+const servicesController = (req, res) => {
+    res.json({ data: "service" });
+};
+
+apiRouter.get("/products", productsController);
+apiRouter.get("/services", servicesController);
+
+app.use("/api", apiRouter);
+
+app.listen(8000, () => console.log("listening 8000"));
+```
+
+> So que desse jeito no mesmo arquivo ainda nao é certo, o certo é modularizar o codigo dessa forma a seguir:
+
+## Modularizando
+> Entao criamos as pastas `controllers` e `routes`
+
+```js
+//controllers/productsController.js
+export const productsController = (req, res) => {
+    res.json({ data: "products" });
+};
+```
+
+```js
+//controllers/servicesController.js
+export const servicesController = (req, res) => {
+    res.json({ data: "service" });
+};
+```
+
+```js
+//routes/apiRoutes.js
+import express from "express";
+import { productsController } from "../controllers/productsController.js";
+import { servicesController } from "../controllers/servicesController.js";
+
+export const apiRouter = express.Router();
+apiRouter.get("/products", productsController);
+apiRouter.get("/services", servicesController);
+```
+
+```js
+//server.js
+import express from "express";
+import { apiRouter } from "./routes/apiRouter.js";
+
+const app = express();
+
+app.use("/api", apiRouter);
+
+// 404 para qualquer rota que não exista.
+app.use((req, res) => {
+    res.status(404).json({ message: "Endpoint not found." });
+});
+
+app.listen(8000, () => console.log("listening 8000"));
+```
+
+
 ## Criando outra API
 
 ```js

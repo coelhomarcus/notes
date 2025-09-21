@@ -73,7 +73,7 @@ db.connect();
 
 const saltRounds = 10;
 
-//Requisição POST simples de registo com EMAIL E SENHA
+// Requisição POST simples de registo com EMAIL E SENHA
 // nessa requisição fazemos um insert no banco de dados
 // onde pegamos o email e password do body da requisição post
 // usamos o bcrypt para transformar a senha em hash
