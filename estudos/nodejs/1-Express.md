@@ -1,6 +1,6 @@
-### Express
+# Express
 
-### Instalação
+## Instalação
 
 ```bash
 npm init -y
@@ -8,22 +8,28 @@ npm init -y
 npm install express
 ```
 
+Mudando o arquivo `main` em `package.json` para `index.js`. Também mudando o tipo para usar ES Modules:
+
 ```json
-//mudar o arquivo main em package.json para index.js ou o nome que estiver
-"main": "index.js"
-//tambem mudar o tipo
-"type": "module"
+{
+  "main": "index.js",
+  "type": "module"
+}
 ```
 
-### NodeMon
+## `Nodemon`
 
-vamos usar para executar e nao precisar ficar fechando e rodando dnv com alterações `nodemon index.js`
+Vamos usar para executar e não precisar ficar fechando e rodando de novo com alterações `nodemon index.js`
 
 ```bash
 npm install -g nodemon
 ```
 
-### Criando Aplicação
+> Hoje já existe `--watch` no node, então não é necessário, mas `Nodemon` ainda é muito usado.
+
+## Criando Aplicação
+
+> Exemplo básico de um servidor Express com rotas para todos os métodos HTTP principais (GET, POST, PUT, DELETE).
 
 ```js
 import express from "express";
@@ -55,7 +61,9 @@ app.listen(port, () => {
 });
 ```
 
-### Descobrir diretorio dinamicamente
+## Descobrir diretório dinamicamente
+
+> Como obter o caminho do diretório atual em ES Modules. Necessário para servir arquivos estáticos ou referenciar caminhos relativos.
 
 ```js
 import { dirname } from "path";
@@ -66,7 +74,9 @@ const __dirname = dirname(fileURLToPath(import.meta.url));
 // __dirname + "/public/index.html"
 ```
 
-### Utilizando body-parser (middleware)
+## Utilizando `body-parser` (middleware)
+
+> Middleware para processar dados de formulários HTML codificados em formato `application/x-www-form-urlencoded`. Este é o formato padrão que navegadores usam para enviar dados de formulários (ex: `nome=João&idade=25`). Sem esse middleware, `req.body` ficaria `undefined` em requisições POST.
 
 ```js
 import express from "express";
@@ -78,18 +88,16 @@ const __dirname = dirname(fileURLToPath(import.meta.url));
 const app = express();
 const port = 3000;
 
-//sem isso o body poderia vir undefined
-//mas ainda tenho que estudar as funcionalidades direito
 app.use(bodyParser.urlencoded({ extended: true }));
 
-//ao entrar no localhost:3000 ele carregara o index.html
+// Rota principal - serve o arquivo HTML com formulário
 app.get("/", (req, res) => {
   res.sendFile(__dirname + "/public/index.html");
 });
 
-//la no HTML tem o form com action="/submit" method="POST"
+// Rota para processar dados do formulário HTML (action="/submit" method="POST")
 app.post("/submit", (req, res) => {
-  console.log(req.body);
+  console.log(req.body); // Aqui conseguimos acessar os dados do formulário
 });
 
 app.listen(port, () => {
@@ -97,24 +105,25 @@ app.listen(port, () => {
 });
 ```
 
-### Criando o proprio Middleware
+## Criando nosso `Middleware`
 
 ```js
 import express from "express";
 
 const app = express();
 
-//Criando meu proprio Middleware
+// Criando Middleware
 function logger(req, res, next) {
   //Apenas testes
   console.log("O URL da requisição é: " + req.url);
   console.log("O METHOD da requisição é: " + req.method);
-  //passa para o prodixo middleware ou continua o codigo
-  //se esquecer do next(); a requisição vai carregar infinito e nao ira concluir
+
+  // IMPORTANTE: next() passa o controle para o próximo middleware
+  // Sem chamar next(), a requisição fica pendente e o servidor "trava"
   next();
 }
 
-//Utilizando o middleware
+// Utilizando o middleware
 app.use(logger);
 
 app.get("/", (req, res) => {
@@ -126,7 +135,7 @@ app.listen(3000, () => {
 });
 ```
 
-### Criando outra API
+## Criando outra API
 
 ```js
 import express from "express";
@@ -165,26 +174,26 @@ const max = jokes.length - 1;
 
 const app = express();
 
-//usado para suportar parametros no x-www-encoded
+// Usado para suportar parametros no x-www-encoded
 app.use(express.urlencoded({ extended: true }));
 
-//Pegar todas as piadas
+// Pegar todas as piadas
 app.get("/", (req, res) => {
   res.send(jokes);
 });
 
-//Pegar uma piada aleatorioa
+// Pegar uma piada aleatorioa
 app.get("/random", (req, res) => {
   const randomIndex = Math.floor(Math.random() * (max - min + 1)) + min;
   res.send(JSON.stringify(jokes[randomIndex]));
 });
 
-//Pegar uma piada especifica pelo ID
+// Pegar uma piada especifica pelo ID
 app.get("/joke/:id", (req, res) => {
   res.send(JSON.stringify(jokes[req.params.id]));
 });
 
-//Adicionando uma piada passando a piada e o autor
+// Adicionando uma piada passando a piada e o autor
 app.post("/add", (req, res) => {
   const newId = jokes.length;
   const newJoke = req.body.joke;
@@ -204,7 +213,7 @@ app.post("/add", (req, res) => {
   });
 });
 
-//Modificando uma piada existente
+// Modificando uma piada existente
 app.put("/joke/:id", (req, res) => {
   jokes[req.params.id].autor = req.body.autor;
   jokes[req.params.id].joke = req.body.joke;
@@ -212,7 +221,7 @@ app.put("/joke/:id", (req, res) => {
   res.json(jokes[req.params.id]);
 });
 
-//Deletar por ID
+// Deletar por ID
 app.delete("/joke/:id", (req, res) => {
   const searchIndex = jokes.findIndex((joke) => joke.id == req.params.id);
 
@@ -224,7 +233,7 @@ app.delete("/joke/:id", (req, res) => {
   }
 });
 
-//Deletar todos com AUTORIZAÇÃO
+// Deletar todos com AUTORIZAÇÃO
 app.delete("/all", (req, res) => {
   if (apiKey === req.query.key) {
     jokes = [];

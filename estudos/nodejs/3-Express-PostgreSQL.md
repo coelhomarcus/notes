@@ -1,6 +1,8 @@
-# Express com Postgres
-### Se eu quiser utilizar um login mais robusto, da pra entegrar com o google e etc, alem da persistencia de login com cookies. Utilizando:
-- Passport
+# Express com PostgreSQL
+
+> Para sistemas de autenticação mais avançados, é possível implementar login social (`Google`, `GitHub`, etc) e sessões persistentes com cookies. Biblioteca recomendada: `Passport.js`.
+
+> ⚠️ **`IMPORTANTE`:** O código abaixo usa queries SQL diretas com placeholders (`$1`, `$2`), que são **seguros contra SQL Injection**. Nunca concatene strings diretamente nas queries SQL (ex: `"SELECT * FROM users WHERE id = " + userId`) pois isso permite ataques maliciosos. Sempre use parâmetros ou ORMs como Prisma/Sequelize para maior segurança.
 
 ```js
 import express from "express";
@@ -11,6 +13,7 @@ let amigos;
 const app = express();
 app.use(express.urlencoded({ extended: true }));
 
+// Passando os dados do database e fazendo a conexão.
 const db = new pg.Client({
   user: "coelhomarcus",
   host: "localhost",
@@ -21,6 +24,7 @@ const db = new pg.Client({
 
 db.connect();
 
+// Testando Query
 db.query("SELECT * FROM amigos", (err, res) => {
   if (err) {
     console.log(err.stack);
@@ -47,7 +51,7 @@ app.listen(3000, () => {
 });
 ```
 
-### Autenticação com BCRYPT e HASH
+## Autenticação com BCRYPT e HASH
 
 ```js
 import express from "express";
@@ -70,13 +74,12 @@ db.connect();
 const saltRounds = 10;
 
 //Requisição POST simples de registo com EMAIL E SENHA
-//nessa requisição fazemos um insert no banco de dados
-//onde pegamos o email e password da body da requisição post
-//usamos o bcrypt para transformar a senha em hash
-//no bcrypt os parametros são: senha, saltRounds, callback (com error e o hash que é a senha convertida)
-//então fazemos o insert no BD com o hash ao inves da senha
-//utilizamos async await para conseguir pegar a resposta das querys e poder usar o try catch
-//para tratar alguns erros
+// nessa requisição fazemos um insert no banco de dados
+// onde pegamos o email e password do body da requisição post
+// usamos o bcrypt para transformar a senha em hash
+// no bcrypt os parametros são: senha, saltRounds, callback (com error e o hash que é a senha convertida)
+// então fazemos o insert no BD com o hash ao inves da senha
+// utilizamos async await para conseguir pegar a resposta das querys e poder usar o try catch para tratar alguns erros
 app.post("/register", (req, res) => {
   const email = req.body.email;
   const password = req.body.password;
@@ -110,7 +113,7 @@ app.listen(3000, () => {
 });
 ```
 
-### Comparação de SENHA com HASH - BCRYPT
+## Comparação de SENHA com HASH - BCRYPT
 
 ```js
 bcrypt(senhaINPUT, senhaHASH, (err, result) => {

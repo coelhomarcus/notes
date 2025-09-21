@@ -1,8 +1,6 @@
-# Postgress
+# PostgreSQL
 
-## Aqui vai ter revisão tanto de SQL quando do Postgress
-
-### Criando Tabela - SQL
+## Criando Tabela - SQL
 
 [Tipos de Dados - SQL Postgres](https://www.postgresql.org/docs/current/datatype.html)
 
@@ -14,9 +12,12 @@ CREATE TABLE Amigos (
 );
 ```
 
-### Inserindo Dados - SQL
+## Inserindo Dados - SQL
+
+> Sempre usar aspas simples em string!! Se não da erro
 
 ```sql
--- Sempre usar aspas simples em string!! Se não da erro
 INSERT INTO amigos VALUES (0, 'Marcus', 19);
 ```
+
+> No futuro adicionarei uma pasta apenas para `Postgress`, com mais informações.
