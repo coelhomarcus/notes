@@ -191,4 +191,52 @@ func main() {
 }
 ```
 
+### Structured Logging
+
+- Libs: Logrus, ZeroLog, Zap (da Uber), Slog (Standard Library)
+
+```go
+// Podemos registrar um log no início da aplicação
+slog.Info("Servico sendo iniciado", "version", "1.0.0") //exemplo
+
+
+// Em vez de usar fmt.Println para exibir erros no terminal:
+if err != nil {
+   slog.Error("error ao fazer marshal de json", "error", err)
+}
+```
+
+O exemplo acima ainda não é structured logging de verdade. Vamos configurar de forma estruturada:
+
+```go
+// Criando um logger com saída em JSON
+l := slog.New(slog.NewJSONHandler(os.Stdout, nil))
+
+// Definindo o logger como padrão
+slog.SetDefault(l)
+
+// Agora todos os logs seguem esse formato
+slog.Info("Servico sendo iniciado", "version", "1.0.0")
+
+if err != nil {
+   slog.Error("error ao fazer marshal de json", "error", err)
+}
+
+// Podemos adicionar campos extras, por exemplo, um status HTTP.
+// Aqui misturamos chaves/valores simples com atributos tipados (oq não é encorajado).
+slog.Info("Servico sendo iniciado", "version", "1.0.0", slog.Int("status", http.StatusOK))
+
+// Para ter mais segurança de tipagem, usamos LogAttrs:
+l.LogAttrs(
+   context.Background(),
+   slog.LevelInfo,
+   "tivemos um http rquest",
+   slog.String("method", http.MethodDelete),
+   slog.Duration("time_taken", time.Second)
+)
+// A biblioteca slog de go possui muitos recursos,
+// não dá para anotar todos aqui.
+// https://pkg.go.dev/log/slog
+```
+
 
