@@ -9,6 +9,7 @@
 -   `go get` - Instala algum package
 -   `go install` - Compila e instala um package
 -   `go test` - Roda algum teste relacionado ao projeto
+-   `go mod tidy` - Atualiza as dependencias
 
 ## Tipos de Dados e Variáveis
 
