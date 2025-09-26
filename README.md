@@ -8,7 +8,13 @@
 ![PostgreSQL](https://img.shields.io/badge/PostgreSQL-336791?style=plastic&logo=postgresql&logoColor=white)
 ###
 
-### 🐹 Go
+Ultimamente estava estudando Go, mas no momento precisarei focar em outras prioridades mais urgentes. Vou deixar em [Passos Futuros](./estudos/go/99-Go-Extra.md), anotações sobre o que pretendo estudar futuramente (relacionado a Go) e criar um guia para mim mesmo sobre o que revisar quando retomar os estudos.
+
+Agora, provavelmente vou focar em Java e em aprender mais sobre LLMs para ajudar nos projetos que estou envolvido na universidade.
+
+Percebo que o mercado brasileiro é muito mais forte para Java do que para Go, mas essa é apenas a minha análise leiga sobre o assunto.
+
+## 🐹 Go
 
 | Tópico | Descrição |
 |--------|-----------|
@@ -17,10 +23,11 @@
 | [Conceitos Avançados](./estudos/go/2-Go-Conceitos-Avancados.md) | `Generics`, `Defer` e mais |
 | [Tratamento de Erros](./estudos/go/3-Go-Errors.md) | Padrões de erro em `Go` |
 | [HTTP](./estudos/go/4-Go-HTTP.md) | 🌐 |
+| [Passos Futuros](./estudos/go/99-Go-Extra.md) | ⚠️ |
 
 ###
 
-### ⚛️ React
+## ⚛️ React
 
 | Tópico | Descrição |
 |--------|-----------|
@@ -31,7 +38,7 @@
 
 ###
 
-### 📘 TypeScript
+## 📘 TypeScript
 
 | Tópico | Descrição |
 |--------|-----------|
@@ -40,13 +47,13 @@
 
 ###
 
-### 🎨 Tailwind CSS
+## 🎨 Tailwind CSS
 
 | Tópico | Descrição |
 |--------|-----------|
 | [Revisão Simples](./estudos/tailwind/0-TailwindCSS.md) | Classes utilitárias e Modificadores |
 
-### 🟢 Node.js + API
+## 🟢 Node.js + API
 
 | Tópico | Descrição |
 |--------|-----------|
